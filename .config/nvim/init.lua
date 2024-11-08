@@ -101,7 +101,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -272,6 +272,100 @@ require("lazy").setup({
 		},
 		config = true,
 	},
+	{
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		lazy = false,
+		version = false,
+		opts = {
+			provider = "openai",
+			openai = {
+				model = "gpt-4",
+				temperature = 0.5,
+				max_tokens = 2048,
+			},
+			behaviour = {
+				auto_suggestions = false,
+				auto_set_highlight_group = true,
+				auto_apply_diff_after_generation = false,
+			},
+		},
+		mappings = {
+			suggestion = {
+				accept = "<M-]",
+				prev = "<M-[",
+				dismiss = "<C-]",
+			},
+			submit = {
+				normal = "<CR>",
+				insert = "<C-s>",
+			},
+		},
+		windows = {
+			position = "right",
+			wrap = true,
+			width = 40,
+		},
+		build = "make", -- Set this if you want to build from source
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"zbirenbaum/copilot.lua",
+			"HakonHarnes/img-clip.nvim",
+		},
+	},
+
+	-- {
+	-- 	"yetone/avante.nvim",
+	-- 	event = "VeryLazy",
+	-- 	lazy = false,
+	-- 	version = false,
+	-- 	opts = {
+	-- 		provider = "claude",
+	-- 		claude = {
+	-- 			endpoint = "https://api.anthropic.com",
+	-- 			model = "claude-3-5-sonnet-20241022", -- Adjust if there's a newer model
+	-- 			temperature = 0,
+	-- 			max_tokens = 4096,
+	-- 		},
+	-- 		behaviour = {
+	-- 			auto_suggestions = false,
+	-- 			auto_set_highlight_group = true,
+	-- 			auto_apply_diff_after_generation = false,
+	-- 		},
+	-- 		mappings = {
+	-- 			suggestion = {
+	-- 				accept = "<M-l>",
+	-- 				next = "<M-]>",
+	-- 				prev = "<M-[>",
+	-- 				dismiss = "<C-]>",
+	-- 			},
+	-- 			submit = {
+	-- 				normal = "<CR>",
+	-- 				insert = "<C-s>",
+	-- 			},
+	-- 		},
+	-- 		windows = {
+	-- 			position = "right",
+	-- 			wrap = true,
+	-- 			width = 30,
+	-- 			input = {
+	-- 				prefix = "> ",
+	-- 				height = 8,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"stevearc/dressing.nvim",
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"zbirenbaum/copilot.lua",
+	-- 		"HakonHarnes/img-clip.nvim",
+	-- 	},
+	-- },
 	-- NOTE: Plugins can also be configured to run Lua code when they are loaded.
 	--
 	-- This is often very useful to both group configuration, as well as handle
