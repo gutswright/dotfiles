@@ -1,0 +1,12 @@
+
+To stow the 'hypr' directory into the /home/gutswright/.config/ directory:
+
+I had to to into the TTY (out of hyprland) then run the following commands
+
+mv ~/.config/hypr/hyprland.conf ~/.config/hypr/hyprland.conf.bak
+cd ~/dotfiles
+stow --target=/home/gutswright/.config .config
+
+
+
+
