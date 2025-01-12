@@ -11,6 +11,7 @@
   "mini.nvim": { "branch": "main", "commit": "bac6c8bb77fe0a872719ea43c39e35c7c695f05e" },
   "nvim-treesitter": { "branch": "master", "commit": "622a4a6ba76d1de52b72a965159213ae655b4ac7" },
   "onedark.nvim": { "branch": "master", "commit": "67a74c275d1116d575ab25485d1bfa6b2a9c38a6" },
+  "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "snacks.nvim": { "branch": "main", "commit": "14e89401da348f5d14509fca164fb7bcec83e597" },
   "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "36b5eaf3a3b31e3647abbc80669d7c8491d0dcf8" },
   "vim-matlab": { "branch": "master", "commit": "eafe639be77454b6bf46f149a7695de773b702b9" }

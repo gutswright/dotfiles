@@ -23,6 +23,24 @@ return {
             local servers = {
                 svelte = {},
                 tailwindcss = {},
+                tinymist = {
+                    root_dir = function(_, bufnr)
+                        return vim.fn.expand('%:p:h')
+                    end,
+                    on_init = function(client, _)
+                        client.server_capabilities.semanticTokensProvider = nil
+                        client.settings = {
+                            root_dir = function(_, bufnr)
+                                return vim.fn.expand('%:p:h')
+                            end,
+                        }
+                    end,
+                    settings = {
+                        formatterMode = 'typstyle',
+                        outputPath = '$root/$dir/$name',
+                        exportPdf = 'onType',
+                    },
+                },
                 lua_ls = {
                     settings = {
                         Lua = {
