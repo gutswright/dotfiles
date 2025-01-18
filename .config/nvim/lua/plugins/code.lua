@@ -1,4 +1,5 @@
 return {
+    { 'nvim-lua/plenary.nvim' },
     {
         --NOTE treesitter looks at the file and highlights accordingly
         'nvim-treesitter/nvim-treesitter',

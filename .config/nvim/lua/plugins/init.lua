@@ -27,6 +27,7 @@ require('lazy').setup({
         require('plugins.mini'),
         require('plugins.snacks'),
         require('plugins.tabs'),
+        require('plugins.matlab'),
         -- add your plugins here
     },
     -- Configure any other settings here. See the documentation for more details.
