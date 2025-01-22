@@ -1,0 +1,31 @@
+# theme = Chalkboard
+# palette = 0=#703983
+# palette = 1=#909090
+# palette = 2=#990902
+# palette = 3=#884924
+# palette = 4=#090938
+# palette = 5=#023912
+# palette = 6=#008821
+# palette = 7=#A02383
+# palette = 8=#777293
+# palette = 9=#902373
+# palette = 10=#903347
+# background = 171717
+# background = #000000
+# foreground = #F3F9FF
+# cursor-color = #F9F3FF
+# selection-foreground = #920123
+# selection-background = #920123
+
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/animated-gradient-shader.glsl
+
+keybind = ctrl+r>r=reload_config
+
+# font-family = "Cantarell Extra Bold"
+# font-family = "Cantarell Extra Bold"
+# font-style = true
+# font-style-bold = true
+# font-style-italic = true
+# font-style-bold-italic = true
+
