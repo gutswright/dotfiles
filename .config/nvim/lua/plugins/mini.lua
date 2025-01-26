@@ -12,6 +12,13 @@ return {
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
             require('mini.comment').setup({})
+            vim.api.nvim_create_autocmd('Filetype', {
+                pattern = 'dart',
+                callback = function()
+                    vim.bo.commentstring = '// %s'
+                end,
+            })
+
             require('mini.cursorword').setup({}) -- underlines all the same words in the file
 
             local hipatterns = require('mini.hipatterns')

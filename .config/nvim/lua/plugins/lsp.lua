@@ -23,6 +23,7 @@ return {
             local servers = {
                 svelte = {},
                 tailwindcss = {},
+                dartls = {},
                 tinymist = {
                     root_dir = function(_, bufnr)
                         return vim.fn.expand('%:p:h')
