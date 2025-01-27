@@ -1,7 +1,11 @@
 return {
+    -- {
+    --     'nvim-lua/plenary.nvim',
+    -- },
     {
         -- this wraps any warning or error message in neovim, me-likey!
         'rachartier/tiny-inline-diagnostic.nvim',
+        enable = false,
         event = 'VeryLazy', -- Or `LspAttach`
         priority = 1000, -- needs to be loaded in first
         config = function()
@@ -23,7 +27,14 @@ return {
             local servers = {
                 svelte = {},
                 tailwindcss = {},
-                dartls = {},
+                -- dartls = {
+                --     settings = {
+                --         dart = {
+                --             completFunctionCalls = true,
+                --             showTodos = true,
+                --         },
+                --     },
+                -- },
                 tinymist = {
                     root_dir = function(_, bufnr)
                         return vim.fn.expand('%:p:h')
@@ -112,7 +123,6 @@ return {
                     end,
                 },
             })
-
             vim.cmd(
                 [[sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticSignError]]
             )
@@ -132,7 +142,7 @@ return {
                     -- these will be buffer-local keybindings
                     -- because they only work if you have an active language server
                     vim.keymap.set('n', 'K', function()
-                        vim.lsp.buf.hover({ border = 'double' })
+                        vim.lsp.buf.hover({border = 'double' })
                     end, { desc = 'Show Hover Docs', buffer = event.buf })
                     -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = "", buffer = event.buf })
                     -- vim.keymap.set(

@@ -23,10 +23,11 @@ require('lazy').setup({
     spec = {
         require('plugins.code'),
         require('plugins.format'),
-        require('plugins.lsp'),
+        -- require('plugins.lsp'),
         require('plugins.mini'),
         require('plugins.snacks'),
         require('plugins.tabs'),
+        require('plugins.flutter_tools'),
         -- add your plugins here
     },
     -- Configure any other settings here. See the documentation for more details.
