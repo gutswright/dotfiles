@@ -2,6 +2,7 @@
 
 vim.o.clipboard = 'unnamedplus' -- sync clipboards
 vim.keymap.set('i', 'jk', '<esc>')
+vim.keymap.set('i', 'JK', '<esc>')
 
 vim.wo.number = true
 vim.opt.rnu = true
