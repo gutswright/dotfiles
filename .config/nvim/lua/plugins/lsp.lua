@@ -3,6 +3,9 @@ return {
     --     'nvim-lua/plenary.nvim',
     -- },
     {
+        'tranvansang/octave.vim',
+    },
+    {
         -- this wraps any warning or error message in neovim, me-likey!
         'rachartier/tiny-inline-diagnostic.nvim',
         enable = false,
@@ -142,7 +145,7 @@ return {
                     -- these will be buffer-local keybindings
                     -- because they only work if you have an active language server
                     vim.keymap.set('n', 'K', function()
-                        vim.lsp.buf.hover({border = 'double' })
+                        vim.lsp.buf.hover({ border = 'double' })
                     end, { desc = 'Show Hover Docs', buffer = event.buf })
                     -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = "", buffer = event.buf })
                     -- vim.keymap.set(
