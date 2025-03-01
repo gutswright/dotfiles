@@ -12,6 +12,7 @@ return {
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
             require('mini.comment').setup({})
+            require('mini.ai').setup({})
             vim.api.nvim_create_autocmd('Filetype', {
                 pattern = 'dart',
                 callback = function()

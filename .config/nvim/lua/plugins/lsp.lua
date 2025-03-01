@@ -144,6 +144,7 @@ return {
             )
 
             vim.api.nvim_create_autocmd('LspAttach', {
+                -- this runs whenever I have an lsp that starts
                 desc = 'LSP actions',
                 callback = function(event)
                     -- these will be buffer-local keybindings
@@ -170,6 +171,8 @@ return {
                     -- require('telescope.builtin').lsp_implementations,
                     -- { desc = '[I]mplementations', buffer = event.buf }
                     -- )
+
+                    vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { desc = '[G]oto [D]efinition' })
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = event.buf })
                     vim.keymap.set(
                         'n',
