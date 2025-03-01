@@ -130,6 +130,7 @@ return {
             })
 
             -- vim.keymap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+            vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { desc = '[G]oto [D]efinition' })
             vim.cmd(
                 [[sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticSignError]]
             )
