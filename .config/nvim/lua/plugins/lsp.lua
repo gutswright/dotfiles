@@ -20,11 +20,13 @@ return {
         name = 'lspconfig',
         event = { 'BufReadPre', 'BufNewFile', 'VeryLazy' },
         dependencies = {
+            { 'nvim-telescope/telescope.nvim' }, -- Optional for class previewer
             { 'saghen/blink.cmp' },
             { 'williamboman/mason.nvim', name = 'mason' },
             { 'williamboman/mason-lspconfig.nvim', name = 'mason-lspconfig' },
             { 'WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-installer' },
         },
+
         opts = {},
         config = function()
             local servers = {
@@ -126,6 +128,8 @@ return {
                     end,
                 },
             })
+
+            -- vim.keymap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
             vim.cmd(
                 [[sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticSignError]]
             )
