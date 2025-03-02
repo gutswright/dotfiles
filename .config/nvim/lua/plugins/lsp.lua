@@ -2,9 +2,9 @@ return {
     -- {
     --     'nvim-lua/plenary.nvim',
     -- },
-    {
-        'tranvansang/octave.vim',
-    },
+    -- {
+    --     'tranvansang/octave.vim',
+    -- },
     {
         -- this wraps any warning or error message in neovim, me-likey!
         'rachartier/tiny-inline-diagnostic.nvim',
@@ -14,6 +14,12 @@ return {
         config = function()
             require('tiny-inline-diagnostic').setup()
         end,
+    },
+    {
+        'folke/ts-comments.nvim',
+        opts = {},
+        event = 'VeryLazy',
+        enabled = vim.fn.has('nvim-0.10.0') == 1,
     },
     {
         'neovim/nvim-lspconfig',
@@ -32,6 +38,17 @@ return {
             local servers = {
                 svelte = {},
                 tailwindcss = {},
+                matlab_ls = {
+                    filetypes = { 'matlab' },
+                    settings = {
+                        MATLAB = {
+                            indexWorkspace = true,
+                            installPath = '/usr/local/MATLAB/R2024b/', -- Optional: set the path to your MATLAB installation
+                            matlabConnectionTiming = 'onStart',
+                            telemetry = false,
+                        },
+                    },
+                },
                 dartls = {
                     settings = {
                         dart = {

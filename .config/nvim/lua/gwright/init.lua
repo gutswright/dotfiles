@@ -25,3 +25,21 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+
+vim.filetype.add({
+    extension = {
+        m = 'matlab',
+        oct = 'matlab', -- This is the important line for .oct files
+    },
+})
+vim.g.filetype_m = 'matlab'
+
+-- In your init.lua or early-loading config file
+vim.filetype.add({
+    extension = {
+        m = 'matlab',
+    },
+    pattern = {
+        ['.*%.m'] = 'matlab',
+    },
+})

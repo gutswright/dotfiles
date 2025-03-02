@@ -1,3 +1,10 @@
 vim.keymap.set('n', '<leader><leader>', function()
     vim.print('hello world')
 end, {})
+
+vim.api.nvim_set_hl(0, 'matlabOperator', { fg = '#ff9900', bold = true })
+vim.api.nvim_set_hl(0, 'matlabComment', { fg = '#6a9955' })
+vim.api.nvim_set_hl(0, 'matlabKeyword', { fg = '#569cd6', bold = true })
+vim.api.nvim_set_hl(0, 'matlabString', { fg = '#ce9178' })
+-- vim.api.nvim_set_hl(0, 'matlabNumber', { fg = '#b5cea8' })
+vim.api.nvim_set_hl(0, 'number', { fg = '#b5cea8' })
