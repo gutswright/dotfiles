@@ -49,14 +49,14 @@ return {
                         },
                     },
                 },
-                dartls = {
-                    settings = {
-                        dart = {
-                            completFunctionCalls = true,
-                            showTodos = true,
-                        },
-                    },
-                },
+                -- dartls = {
+                --     settings = {
+                --         dart = {
+                --             completFunctionCalls = true,
+                --             showTodos = true,
+                --         },
+                --     },
+                -- },
                 tinymist = {
                     root_dir = function(_, bufnr)
                         return vim.fn.expand('%:p:h')

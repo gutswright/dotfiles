@@ -1,0 +1,3 @@
+color "type=HEADINGS fg=BLACK bg=WHITE bold=0 dim=0"
+color "type=HEADINGS_ODD fg=BLACK bg=WHITE bold=0 dim=0"
+color "type=NUMB fg=RED bg=DEFAULT_COLOR bold=1 dim=0"
