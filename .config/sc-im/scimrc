@@ -1,3 +1,10 @@
+
+define_color "customgray" 70 70 70 
+
+color "type=DEFAULT fg=BLACK bg=customgray underline=1 italic=1"
+
 color "type=HEADINGS fg=BLACK bg=WHITE bold=0 dim=0"
 color "type=HEADINGS_ODD fg=BLACK bg=WHITE bold=0 dim=0"
 color "type=NUMB fg=RED bg=DEFAULT_COLOR bold=1 dim=0"
+color "type=STRG fg=WHITE bg=DEFAULT_COLOR bold=0 dim=0"
+color "type=GRID_EVEN fg=BLACK bg=customgray underline=1 italic=1"
