@@ -21,7 +21,11 @@
 # custom-shader = shaders/animated-gradient-shader.glsl
 
 keybind = ctrl+r>r=reload_config
+shell-integration = fish
+keybind = ctrl+a>n=new_window
 
+
+config-file = trial/config
 # font-family = "Cantarell Extra Bold"
 # font-family = "Cantarell Extra Bold"
 # font-style = true

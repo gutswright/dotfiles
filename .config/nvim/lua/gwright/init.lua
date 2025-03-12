@@ -1,6 +1,7 @@
 -- In case anything every breaks, this file will still run (if something in the plugins dir breaks nvim will be O.K.)
 
 vim.o.clipboard = 'unnamedplus' -- sync clipboards
+vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('i', 'JK', '<esc>')
 
