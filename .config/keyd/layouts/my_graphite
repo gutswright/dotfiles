@@ -1,25 +1,10 @@
 [my_graphite:layout]
-
-- = [
-= = ]
-_ = {
-+ = }
-[ = ;
-] = =
-{ = :
-} = +
-' = ,
-" = ?
-> = -
-< = > 
-? = /
-
 q = b
 w = l
 e = d
 r = w
 t = z
-y = '
+y = ' 
 u = f
 i = o
 o = u 
@@ -34,6 +19,7 @@ j = h
 k = a
 l = e
 ; = i
+' = ,
 
 z = q
 x = x
@@ -43,52 +29,13 @@ b = v
 n = k
 m = p
 , = .
-. = "
+. = -
 / = /
 
-shift = layer(my_graphite_shift)
-
-[my_graphite_shift:S]
-Q = B
-W = L
-E = D
-R = W
-T = Z
-Y = _
-U = F
-I = O
-O = U
-P = J
-
-A = N
-S = R
-D = T
-F = S
-G = G
-H = Y
-J = H
-K = A
-L = E
-: = I
-
-Z = Q
-X = X
-C = M
-V = C
-B = V
-N = K
-M = P
-
-. = -
-
-
-
-
-
-
-
-
-
-
-
-
+[shift]
+, = >
+. = "
+/ = <
+y = _
+' = ?
+; = :
