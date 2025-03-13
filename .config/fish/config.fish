@@ -5,6 +5,10 @@ zoxide init fish | source
 
 abbr --add cd z
 
+set -gx EDITOR nvim
+
 if status is-interactive
 
 end
+
+
