@@ -37,11 +37,20 @@ keybind = ctrl+r>a=resize_split:up,200
 
 keybind = ctrl+c=copy_to_clipboard
 
-adw-toolbar-style=raised
-gtk-titlebar=true
+# title = "This is it"
 
 theme =Abernathy 
 theme = tokyonight 
+window-theme = ghostty
+window-titlebar-background = #060313
+gtk-titlebar = true
+gtk-tabs-location = right
+adw-toolbar-style = raised
+cursor-style = underline 
+cursor-color = #A06383
+cursor-opacity = 1
+adjust-cursor-thickness = 200%
+
 # palette = 0=#703983
 # palette = 1=#909090
 # palette = 2=#990902
@@ -69,10 +78,4 @@ keybind = ctrl+a>n=new_window
 
 
 config-file = trial/config
-# font-family = "Cantarell Extra Bold"
-# font-family = "Cantarell Extra Bold"
-# font-style = true
-# font-style-bold = true
-# font-style-italic = true
-# font-style-bold-italic = true
 

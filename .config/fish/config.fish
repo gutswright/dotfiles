@@ -22,13 +22,13 @@ function fish_mode_prompt
   switch $fish_bind_mode
     case default
       set_color --bold red
-      random choice '🐬 ' '🐟 ' '🐳 ' '🐋 ' '🌊 ' '🎣 ' '⚓ ' '🌊 ' '🧊 '
+      random choice '🏮 ' '⛵ ' '🪸 ' '🦐 ' '🦀 ' '🦞 ' '🦑 ' '🐙 '
     case insert
       set_color --bold green
-      random choice '🏮 ' '⛵ ' '🪸 ' '🦐 ' '🦀 ' '🦞 ' '🦑 ' '🐙 ' 
+      random choice '🐬 ' '🐟 ' '🐳 ' '🐋 ' '🌊 ' '🎣 ' '⚓ ' '🌊 ' '🧊 ' '🌀 '
     case replace_one 
       set_color --bold green
-      random choice '🦈 ' '🌀 ' '🥥 '
+      random choice '🦈 '  '🥥 '
     case visual
       set_color --bold brmagenta
       random choice '🧭 ' '🦦 ' '🦭 '
