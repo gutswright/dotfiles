@@ -8,36 +8,36 @@ font-family = "Source Code Pro Semibold"
 font-size = 16 
 
 
-# I think it would be a good idea to make the ctrl left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
+# I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
-keybind = ctrl+o>t=new_tab
-keybind = ctrl+c>t=close_tab
-keybind = ctrl+l>t=previous_tab
-keybind = ctrl+r>t=next_tab
-keybind = ctrl+m>t=move_tab:1
-keybind = ctrl+t>t=toggle_tab_overview
+keybind = alt+r>r=reload_config
 
+keybind = alt+n>t=new_tab
+keybind = alt+c>t=close_tab
+keybind = alt+l>t=previous_tab
+keybind = alt+r>t=next_tab
+keybind = alt+m>t=move_tab:1
+keybind = alt+t>t=toggle_tab_overview
 
-keybind = ctrl+s>d=new_split:down
-keybind = ctrl+s>r=new_split:right
-keybind = ctrl+s>t=toggle_split_zoom
+keybind = alt+s>d=new_split:down
+keybind = alt+s>r=new_split:right
+keybind = alt+s>t=toggle_split_zoom
 
-keybind = ctrl+g>r=goto_split:right
-keybind = ctrl+g>l=goto_split:left
-keybind = ctrl+g>d=goto_split:down
-keybind = ctrl+g>u=goto_split:up
+keybind = alt+g>r=goto_split:right
+keybind = alt+g>l=goto_split:left
+keybind = alt+g>d=goto_split:down
+keybind = alt+g>u=goto_split:up
 
+keybind = alt+c>s=close_surface
 
-keybind = ctrl+k>s=close_surface
+# keybind = alt+i>t=inspector:toggle
+keybind = alt+n>c=open_config
+keybind = alt+r>h=resize_split:down,200
+keybind = alt+r>a=resize_split:up,200
 
-keybind = ctrl+i>t=inspector:toggle
-keybind = ctrl+o>c=open_config
-keybind = ctrl+r>h=resize_split:down,200
-keybind = ctrl+r>a=resize_split:up,200
-
-keybind = ctrl+c=copy_to_clipboard
-
-# title = "This is it"
+keybind = alt+c=copy_to_clipboard
+keybind = alt+d=scroll_page_lines:-3
+keybind = alt+w=scroll_page_lines:3
 
 theme =Abernathy 
 theme = tokyonight 
@@ -72,9 +72,8 @@ adjust-cursor-thickness = 200%
 # custom-shader = shaders/bloom.glsl
 # custom-shader = shaders/animated-gradient-shader.glsl
 
-keybind = ctrl+r>r=reload_config
 shell-integration = fish
-keybind = ctrl+a>n=new_window
+keybind = alt+a>n=new_window
 
 
 config-file = trial/config
