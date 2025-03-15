@@ -6,9 +6,26 @@ return {
         config = function() -- We are setting up a plugin spec
             -- (config is a key-value pair for lazy)
             -- this function is ran whenever the plugin is loaded
-            require('mini.files').setup({})
+            local minifiles = require('mini.files')
+            minifiles.setup({
+                mappings = {
+                    close = 'q',
+                    go_in = '<Right>',
+                    go_in_plus = 'L',
+                    go_out = '<Left>',
+                    go_out_plus = 'H',
+                    mark_goto = "'",
+                    mark_set = 'm',
+                    reset = '<BS>',
+                    reveal_cwd = '@',
+                    show_help = 'g?',
+                    synchronize = '=',
+                    trim_left = '<',
+                    trim_right = '>',
+                },
+            })
             vim.keymap.set('n', '<leader>e', function()
-                MiniFiles.open()
+                require('mini.files').open()
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
             require('mini.comment').setup({})

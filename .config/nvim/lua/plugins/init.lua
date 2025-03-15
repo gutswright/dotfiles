@@ -39,20 +39,20 @@ require('lazy').setup({
 
 -- everything is global by default
 
-local my_func = function()
-    print('Hello from Spencer')
-end
-
-my_func()
-
-local my_table = {
-    here = 'there',
-    her = 'ther',
-}
-
-for key, val in pairs(my_table) do
-    print(key, val)
-end
+-- local my_func = function()
+--     print('Hello from Spencer')
+-- end
+--
+-- my_func()
+--
+-- local my_table = {
+--     here = 'there',
+--     her = 'ther',
+-- }
+--
+-- for key, val in pairs(my_table) do
+--     print(key, val)
+-- end
 
 -- this vim is a global table
 
