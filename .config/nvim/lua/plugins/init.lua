@@ -27,6 +27,7 @@ require('lazy').setup({
         require('plugins.mini'),
         require('plugins.snacks'),
         require('plugins.tabs'),
+        require('plugins.format'),
         require('plugins.flutter_tools'),
         -- add your plugins here
     },
