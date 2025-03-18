@@ -32,12 +32,15 @@ keybind = alt+c>s=close_surface
 
 # keybind = alt+i>t=inspector:toggle
 keybind = alt+n>c=open_config
-keybind = alt+r>h=resize_split:down,200
+keybind = alt+r>d=resize_split:down,200
 keybind = alt+r>a=resize_split:up,200
 
-keybind = alt+c=copy_to_clipboard
-keybind = alt+d=scroll_page_lines:-3
-keybind = alt+w=scroll_page_lines:3
+# keybind = ctrl+c=copy_to_clipboard
+keybind = alt+e=scroll_page_lines:-3
+keybind = alt+d=scroll_page_lines:3
+keybind = alt+w>s=write_scrollback_file:paste
+keybind = alt+w>e=write_scrollback_file:open
+
 
 theme =Abernathy 
 theme = tokyonight 
