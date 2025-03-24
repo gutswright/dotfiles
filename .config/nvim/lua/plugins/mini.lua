@@ -10,10 +10,10 @@ return {
             minifiles.setup({
                 mappings = {
                     close = 'q',
-                    go_in = 'l',
-                    go_in_plus = 'L',
-                    go_out = 'h',
-                    go_out_plus = 'H',
+                    go_in = 'e',
+                    go_in_plus = 'E',
+                    go_out = 'y',
+                    go_out_plus = 'Y',
                     mark_goto = "'",
                     mark_set = 'm',
                     reset = '<BS>',
@@ -24,7 +24,7 @@ return {
                     trim_right = '>',
                 },
             })
-            vim.keymap.set('n', '<leader>e', function()
+            vim.keymap.set('n', '<leader>d', function()
                 require('mini.files').open()
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
