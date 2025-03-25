@@ -7,7 +7,6 @@ font-family = "Source Code Pro Semibold"
 # font-family = "CaskaydiaCove Nerd Font Mono"
 font-size = 16 
 
-
 # I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
 keybind = alt+r>r=reload_config
@@ -36,10 +35,13 @@ keybind = alt+r>d=resize_split:down,200
 keybind = alt+r>a=resize_split:up,200
 
 # keybind = ctrl+c=copy_to_clipboard
-keybind = alt+e=scroll_page_lines:-3
-keybind = alt+d=scroll_page_lines:3
-keybind = alt+w>s=write_scrollback_file:paste
-keybind = alt+w>e=write_scrollback_file:open
+keybind = alt+d=scroll_page_lines:-3
+keybind = alt+w=scroll_page_lines:3
+
+keybind = alt+n>w=new_window
+
+# keybind = alt+w>s=write_scrollback_file:paste
+# keybind = alt+w>e=write_scrollback_file:open
 
 
 theme =Abernathy 
@@ -76,7 +78,6 @@ adjust-cursor-thickness = 200%
 # custom-shader = shaders/animated-gradient-shader.glsl
 
 shell-integration = fish
-keybind = alt+a>n=new_window
 
 
 config-file = trial/config
