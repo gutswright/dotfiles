@@ -6,6 +6,7 @@ font-family = "Source Code Pro Semibold"
 # font-family = "SourceCodeVF Bold"
 # font-family = "CaskaydiaCove Nerd Font Mono"
 font-size = 16 
+working-directory = home 
 
 # I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
@@ -40,8 +41,10 @@ keybind = alt+w=scroll_page_lines:3
 
 keybind = alt+n>w=new_window
 
-# keybind = alt+w>s=write_scrollback_file:paste
-# keybind = alt+w>e=write_scrollback_file:open
+
+
+keybind = alt+s>w=write_screen_file:paste
+keybind = alt+s>o=write_screen_file:open
 
 
 theme =Abernathy 
