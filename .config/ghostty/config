@@ -7,6 +7,7 @@ font-family = "Source Code Pro Semibold"
 # font-family = "CaskaydiaCove Nerd Font Mono"
 font-size = 16 
 working-directory = home 
+macos-option-as-alt = true 
 
 # I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
