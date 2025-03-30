@@ -5,7 +5,9 @@ zoxide init fish | source
 
 abbr --add cd z
 # alias ls="eza --icons=auto --group-directories-first"
+abbr --add tree "exa --tree"
 alias ls="lsd"
+
 
 set -gx EDITOR nvim
 

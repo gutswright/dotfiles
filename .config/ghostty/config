@@ -50,7 +50,7 @@ keybind = alt+s>o=write_screen_file:open
 
 # theme =Abernathy 
 theme = tokyonight 
-theme = deep
+# theme = deep
 # theme = ENCOM 
 window-theme = ghostty
 window-titlebar-background = #060313
@@ -62,34 +62,25 @@ cursor-color = #A06383
 cursor-opacity = 1
 adjust-cursor-thickness = 200%
 
-palette = 0=#703983
-palette = 1=#909090
-palette = 2=#D84040
+# palette = 0=#703983
+# palette = 1=#909090
+# palette = 2=#D84040
 # palette = 3=#884924
-# palette = 4=#BD9C0A
-palette = 4=#5F8B4C
-palette = 4=#859F3D
-palette = 4=#B9B28A
-
-
-palette = 5=#023912
-palette = 6=#FFEFE3
-# palette = 7=#A02383
-# palette = 8=#777293
-# palette = 9=#F9F3FF
-palette = 10=#D76C82
-palette = 10=#8E1616
-
-palette = 11=#EBE8DB
+# palette = 4=#B9B28A
+# palette = 5=#023912
+# palette = 6=#FFEFE3
+# palette = 10=#D76C82
+# palette = 10=#8E1616
+# palette = 11=#EBE8DB
 # palette = 12=#903347
 # palette = 13=#903347
 # palette = 14=#903347
 # palette = 15=#903347
 #
-background = #1A1A19
+# background = #1A1A19
 # background = 171717
 # background = #000000
-foreground = #FFF2D1
+# foreground = #FFF2D1
 # cursor-color = #F9F3FF
 # selection-foreground = #920123
 # selection-background = #920123
