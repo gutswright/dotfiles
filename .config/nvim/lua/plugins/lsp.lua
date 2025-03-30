@@ -192,6 +192,12 @@ return {
                     -- { desc = '[I]mplementations', buffer = event.buf }
                     -- )
 
+                    -- vim.keymap.set(
+                    --     'n',
+                    --     'gd',
+                    --     vim.lsp.buf.definition,
+                    --     { desc = '[G]oto [D]efinition', buffer = event.buf }
+                    -- )
                     vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { desc = '[G]oto [D]efinition' })
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = event.buf })
                     vim.keymap.set(

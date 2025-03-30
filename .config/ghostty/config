@@ -15,9 +15,9 @@ keybind = alt+r>r=reload_config
 
 keybind = alt+n>t=new_tab
 keybind = alt+c>t=close_tab
-keybind = alt+l>t=previous_tab
-keybind = alt+r>t=next_tab
-keybind = alt+m>t=move_tab:1
+keybind = alt+t>l=previous_tab
+keybind = alt+t>r=next_tab
+keybind = alt+t>m=move_tab:1
 keybind = alt+t>t=toggle_tab_overview
 
 keybind = alt+s>d=new_split:down
