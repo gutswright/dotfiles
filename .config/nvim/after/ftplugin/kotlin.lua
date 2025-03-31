@@ -75,5 +75,32 @@ local function run_kotlin_app()
     vim.cmd('startinsert')
 end
 
--- Set the mapping directly (ftplugin-specific version)
-vim.keymap.set('n', '<leader>r', run_kotlin_app, { buffer = true, desc = 'Run Kotlin App on Android' })
+local function apply_kotlin_changes()
+    -- Save current buffer
+    vim.cmd('write')
+
+    -- Get project root
+    local project_root = get_project_root()
+
+    -- Apply changes without full restart
+    local terminal_cmd = string.format(
+        'cd %s && ' .. 'adb shell am broadcast -a com.android.tools.deployment.APPLY_CHANGES',
+        vim.fn.shellescape(project_root)
+    )
+
+    -- Show a small notification instead of new terminal
+    vim.cmd('echo "Applying changes..."')
+    vim.fn.jobstart(terminal_cmd, {
+        on_exit = function(_, code)
+            if code == 0 then
+                vim.cmd('echo "Changes applied successfully"')
+            else
+                vim.cmd('echo "Failed to apply changes"')
+            end
+        end,
+    })
+end
+
+-- Set the mappings
+vim.keymap.set('n', '<leader>R', run_kotlin_app, { buffer = true, desc = 'Run Kotlin App on Android' })
+vim.keymap.set('n', '<leader>r', apply_kotlin_changes, { buffer = true, desc = 'Apply Changes to Kotlin App' })

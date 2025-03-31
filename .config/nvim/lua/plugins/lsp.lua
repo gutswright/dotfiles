@@ -1,9 +1,9 @@
 return {
     -- {
-    --     'nvim-lua/plenary.nvim',
+    --    'nvim-lua/plenary.nvim',
     -- },
     -- {
-    --     'tranvansang/octave.vim',
+    --    'tranvansang/octave.vim',
     -- },
     {
         -- this wraps any warning or error message in neovim, me-likey!
@@ -31,10 +31,24 @@ return {
             { 'williamboman/mason.nvim', name = 'mason' },
             { 'williamboman/mason-lspconfig.nvim', name = 'mason-lspconfig' },
             { 'WhoIsSethDaniel/mason-tool-installer.nvim', name = 'mason-installer' },
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Add cmp-nvim-lsp as a dependency
+            { 'hrsh7th/nvim-cmp' }, -- Add cmp-nvim-lsp as a dependency
         },
 
         opts = {},
         config = function()
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local lspconfig = require('lspconfig')
+
+            lspconfig.sourcekit.setup({
+                capabilities = capabilities,
+                workspace = {
+                    didChangeWatchedFiles = {
+                        dynamicRegistration = true,
+                    },
+                },
+            })
+
             local servers = {
                 svelte = {},
                 tailwindcss = {},
@@ -106,37 +120,17 @@ return {
                         },
                     },
                 },
+                -- swift_lsp = {}, -- Add swift_lsp to the servers table
             }
-
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-
-            local lspconfig = require('lspconfig')
-
-            -- if capabilities ~= nil then
-            --     capabilities.workspace.semanticTokens.refreshSupport = false
-            -- end
-
-            -- local default_setup = function(server)
-            --     lspconfig[server].setup({
-            --         capabilities = capabilities,
-            --     })
-            -- end
 
             require('mason').setup({})
             local ensure_installed = vim.tbl_keys(servers or {})
-            vim.list_extend(ensure_installed, {
-                'stylua', -- Used to format Lua code
-                'kotlin',
-            })
-            require('mason-tool-installer').setup({
-                ensure_installed = ensure_installed,
-            })
+            vim.list_extend(ensure_installed, { 'stylua' })
+            require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
             require('mason-lspconfig').setup({
                 handlers = {
                     function(server_name)
                         local server = servers[server_name] or {}
-
                         capabilities = vim.tbl_deep_extend(
                             'force',
                             capabilities,
@@ -148,8 +142,6 @@ return {
                 },
             })
 
-            -- vim.keymap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-            vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { desc = '[G]oto [D]efinition' })
             vim.cmd(
                 [[sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticSignError]]
             )
@@ -164,57 +156,27 @@ return {
             )
 
             vim.api.nvim_create_autocmd('LspAttach', {
-                -- this runs whenever I have an lsp that starts
                 desc = 'LSP actions',
                 callback = function(event)
-                    -- these will be buffer-local keybindings
-                    -- because they only work if you have an active language server
+                    local buffer = event.buf
                     vim.keymap.set('n', 'K', function()
                         vim.lsp.buf.hover({ border = 'double' })
-                    end, { desc = 'Show Hover Docs', buffer = event.buf })
-                    -- vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', { desc = "", buffer = event.buf })
-                    -- vim.keymap.set(
-                    -- 'n',
-                    -- 'gd',
-                    -- require('telescope.builtin').lsp_definitions,
-                    -- { desc = '[D]efinitions', buffer = event.buf }
-                    -- )
-                    -- vim.keymap.set(
-                    -- 'n',
-                    -- 'gR',
-                    -- require('telescope.builtin').lsp_references,
-                    -- { desc = '[R]eferences', buffer = event.buf }
-                    -- )
-                    -- vim.keymap.set(
-                    -- 'n',
-                    -- 'gI',
-                    -- require('telescope.builtin').lsp_implementations,
-                    -- { desc = '[I]mplementations', buffer = event.buf }
-                    -- )
-
-                    -- vim.keymap.set(
-                    --     'n',
-                    --     'gd',
-                    --     vim.lsp.buf.definition,
-                    --     { desc = '[G]oto [D]efinition', buffer = event.buf }
-                    -- )
-                    vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions, { desc = '[G]oto [D]efinition' })
-                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = event.buf })
+                    end, { desc = 'Show Hover Docs', buffer = buffer })
+                    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition', buffer = buffer })
+                    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[D]eclaration', buffer = buffer })
                     vim.keymap.set(
                         'n',
                         'go',
                         vim.lsp.buf.type_definition,
-                        { desc = 'Type Definition', buffer = event.buf }
+                        { desc = 'Type Definition', buffer = buffer }
                     )
-                    -- vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { desc = "", buffer = event.buf })
-                    vim.keymap.set('n', 'gr', vim.lsp.buf.rename, { desc = 'LSP [R]ename', buffer = event.buf }) -- todo change
-                    -- vim.keymap.set({ 'n', 'x' }, '<leader><leader>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', { desc = "", buffer = event.buf })
-                    vim.keymap.set('n', 'gC', vim.lsp.buf.code_action, { desc = '[C]ode Action', buffer = event.buf })
+                    vim.keymap.set('n', 'gr', vim.lsp.buf.rename, { desc = 'LSP [R]ename', buffer = buffer })
+                    vim.keymap.set('n', 'gC', vim.lsp.buf.code_action, { desc = '[C]ode Action', buffer = buffer })
                     vim.keymap.set(
                         'n',
                         '<leader>i',
                         '<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>',
-                        { desc = '[I]nlay Hints', buffer = event.buf }
+                        { desc = '[I]nlay Hints', buffer = buffer }
                     )
                 end,
             })
@@ -222,4 +184,19 @@ return {
             vim.diagnostic.config({ virtual_text = false })
         end,
     },
+    -- Remove the separate cmp-nvim-lsp entry as it's now a dependency of nvim-lspconfig
+    -- { "hrsh7th/cmp-nvim-lsp", lazy = true },
+    -- Keep other cmp related plugins
+    { 'hrsh7th/cmp-buffer', lazy = true },
+    { 'hrsh7th/cmp-path', lazy = true },
+    -- Remove the LuaSnip related entries if you are using vsnip
+    -- { "saadparwaiz1/cmp_luasnip", lazy = true },
+    -- {
+    --    "L3MON4D3/LuaSnip",
+    --    lazy = false, -- Generally recommended to load snippets eagerly
+    --    config = function()
+    --        require("luasnip.loaders.from_vscode").load() -- Load VS Code-style snippets
+    --        -- You can load other snippet formats or define LuaSnip snippets here
+    --    end,
+    -- },
 }
