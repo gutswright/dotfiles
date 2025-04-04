@@ -8,10 +8,11 @@ font-family = "Source Code Pro Semibold"
 font-size = 16 
 working-directory = home 
 macos-option-as-alt = true 
+focus-follows-mouse = true
 
 # I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
-keybind = alt+r>r=reload_config
+keybind = alt+r>g=reload_config
 
 keybind = alt+n>t=new_tab
 keybind = alt+c>t=close_tab
@@ -24,25 +25,25 @@ keybind = alt+s>d=new_split:down
 keybind = alt+s>r=new_split:right
 keybind = alt+s>t=toggle_split_zoom
 
-keybind = alt+g>r=goto_split:right
-keybind = alt+g>l=goto_split:left
-keybind = alt+g>d=goto_split:down
-keybind = alt+g>u=goto_split:up
+keybind = alt+super+right=goto_split:right
+keybind = alt+super+left=goto_split:left
+keybind = alt+super+down=goto_split:down
+keybind = alt+super+up=goto_split:up
 
 keybind = alt+c>s=close_surface
 
 # keybind = alt+i>t=inspector:toggle
 keybind = alt+n>c=open_config
-keybind = alt+r>d=resize_split:down,200
-keybind = alt+r>a=resize_split:up,200
+keybind = ctrl+super+left=resize_split:left,100
+keybind = ctrl+super+down=resize_split:down,100
+keybind = ctrl+super+up=resize_split:up,100
+keybind = ctrl+super+right=resize_split:right,100
 
 # keybind = ctrl+c=copy_to_clipboard
 keybind = alt+d=scroll_page_lines:-3
 keybind = alt+w=scroll_page_lines:3
 
 keybind = alt+n>w=new_window
-
-
 
 keybind = alt+s>w=write_screen_file:paste
 keybind = alt+s>o=write_screen_file:open

@@ -1,12 +1,5 @@
 return {
-    -- {
-    --    'nvim-lua/plenary.nvim',
-    -- },
-    -- {
-    --    'tranvansang/octave.vim',
-    -- },
     {
-        -- this wraps any warning or error message in neovim, me-likey!
         'rachartier/tiny-inline-diagnostic.nvim',
         enable = false,
         event = 'VeryLazy', -- Or `LspAttach`
@@ -184,19 +177,6 @@ return {
             vim.diagnostic.config({ virtual_text = false })
         end,
     },
-    -- Remove the separate cmp-nvim-lsp entry as it's now a dependency of nvim-lspconfig
-    -- { "hrsh7th/cmp-nvim-lsp", lazy = true },
-    -- Keep other cmp related plugins
     { 'hrsh7th/cmp-buffer', lazy = true },
     { 'hrsh7th/cmp-path', lazy = true },
-    -- Remove the LuaSnip related entries if you are using vsnip
-    -- { "saadparwaiz1/cmp_luasnip", lazy = true },
-    -- {
-    --    "L3MON4D3/LuaSnip",
-    --    lazy = false, -- Generally recommended to load snippets eagerly
-    --    config = function()
-    --        require("luasnip.loaders.from_vscode").load() -- Load VS Code-style snippets
-    --        -- You can load other snippet formats or define LuaSnip snippets here
-    --    end,
-    -- },
 }
