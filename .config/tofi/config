@@ -1,0 +1,17 @@
+prompt-text = "|> "
+
+text-color = #c0caf5
+prompt-color = #db4b4b
+selection-color = #f7768e
+background-color = #10111c40
+
+width = 100%
+height = 100%
+border-width = 0
+outline-width = 0
+padding-left = 25%
+padding-top = 20%
+result-spacing = 10
+num-results = 18
+font = "Berkeley Mono"
+font-size = 20

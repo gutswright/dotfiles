@@ -40,9 +40,8 @@ keybind = alt+r>a=resize_split:up,200
 keybind = alt+d=scroll_page_lines:-3
 keybind = alt+w=scroll_page_lines:3
 
-keybind = alt+n>w=new_window
-
-
+# keybind = alt+n>w=new_window
+keybind = super+shift+ctrl+alt+q=new_window
 
 keybind = alt+s>w=write_screen_file:paste
 keybind = alt+s>o=write_screen_file:open
