@@ -1,4 +1,8 @@
 return {
+    {
+        'spencer-thompson/multiplayer.nvim',
+        opts = {},
+    },
     { 'nvim-lua/plenary.nvim' },
     {
         --NOTE treesitter looks at the file and highlights accordingly

@@ -43,6 +43,9 @@ return {
             })
 
             local servers = {
+                ruff = {
+                    highlight = { enable = true },
+                },
                 svelte = {},
                 tailwindcss = {},
                 kotlin_language_server = {},

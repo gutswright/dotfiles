@@ -17,9 +17,8 @@ return {
             { '[B', '<cmd>BufferLineMovePrev<cr>', desc = 'Move buffer prev' },
             { ']B', '<cmd>BufferLineMoveNext<cr>', desc = 'Move buffer next' },
         },
-        opts = {
-
-            separator_style = 'slant',
+        options = {
+            separator_style = 'slope',
         },
     },
     {
