@@ -1,0 +1,10 @@
+defaults:
+  theme: dark
+  terminal_font_size: 12
+  image_protocol: auto
+
+snippet:
+  exec:
+    enable: true
+  exec_replace:
+    enable: true
