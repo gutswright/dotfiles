@@ -60,14 +60,6 @@ return {
                         },
                     },
                 },
-                -- dartls = {
-                --     settings = {
-                --         dart = {
-                --             completFunctionCalls = true,
-                --             showTodos = true,
-                --         },
-                --     },
-                -- },
                 tinymist = {
                     root_dir = function(_, bufnr)
                         return vim.fn.expand('%:p:h')
@@ -182,4 +174,25 @@ return {
     },
     { 'hrsh7th/cmp-buffer', lazy = true },
     { 'hrsh7th/cmp-path', lazy = true },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+            { 'nvim-treesitter/nvim-treesitter-textobjects' },
+        },
+        config = function()
+            require('nvim-treesitter.configs').setup({
+                ensure_installed = { 'python' }, -- Ensure Python grammar is installed
+                highlight = { enable = true }, -- Enable highlighting
+                indent = { enable = true }, -- Optional: enable indentation
+                textobjects = { -- Optional: enable textobjects
+                    select = {
+                        enable = true,
+                    },
+                    move = {
+                        enable = true,
+                    },
+                },
+            })
+        end,
+    },
 }

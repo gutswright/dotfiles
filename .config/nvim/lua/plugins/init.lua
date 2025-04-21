@@ -24,6 +24,7 @@ require('lazy').setup({
         require('plugins.code'),
         require('plugins.format'),
         require('plugins.lsp'),
+        require('plugins.dap'),
         require('plugins.mini'),
         require('plugins.markdown_preview'),
         require('plugins.snacks'),

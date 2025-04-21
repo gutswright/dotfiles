@@ -24,7 +24,7 @@ return {
                     trim_right = '>',
                 },
             })
-            vim.keymap.set('n', '<leader>d', function()
+            vim.keymap.set('n', '<leader>e', function()
                 require('mini.files').open()
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
