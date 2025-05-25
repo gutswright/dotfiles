@@ -181,7 +181,7 @@ return {
         },
         config = function()
             require('nvim-treesitter.configs').setup({
-                ensure_installed = { 'python' }, -- Ensure Python grammar is installed
+                ensure_installed = { 'python', 'html', 'javascript', 'css' }, -- Ensure Python grammar is installed
                 highlight = { enable = true }, -- Enable highlighting
                 indent = { enable = true }, -- Optional: enable indentation
                 textobjects = { -- Optional: enable textobjects
