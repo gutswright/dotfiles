@@ -1,4 +1,5 @@
 -- In case anything every breaks, this file will still run (if something in the plugins dir breaks nvim will be O.K.)
+
 vim.o.clipboard = 'unnamedplus' -- sync clipboards
 vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set('i', 'jk', '<esc>')
@@ -25,15 +26,6 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
-
--- In your init.lua or a dedicated autocommands file
-vim.api.nvim_create_autocmd('BufReadPost', {
-    pattern = '**.py', -- Adjust this pattern to match your specific file
-    callback = function()
-        vim.cmd('TSDisable highlight')
-    end,
-    desc = 'Disable Treesitter highlight for streamlit_app.py',
-})
 --
 -- I need a new home for y, Y
 -- a, A,

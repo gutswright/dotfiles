@@ -8,12 +8,10 @@ font-family = "Source Code Pro Semibold"
 font-size = 16 
 working-directory = home 
 macos-option-as-alt = true 
-focus-follows-mouse = true
+# focus-follows-mouse = true
 background-opacity = 0.85
-unfocused-split-opacity = 0.9
-mouse-hide-while-typing = true
-# unfocused-split-fill = #226861 
-unfocused-split-fill = #000000
+unfocused-split-opacity = 0.9 
+# unfocused-split-fill = #022861 
 
 # I think it would be a good idea to make the alt left (or right button) into a an alt button and change all of my keyboard shortcuts into alt keybinds
 
@@ -96,6 +94,7 @@ adjust-cursor-thickness = 200%
 # custom-shader = shaders/animated-gradient-shader.glsl
 
 shell-integration = fish
+
 
 config-file = trial/config
 
