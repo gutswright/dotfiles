@@ -44,7 +44,7 @@ return {
 
             local servers = {
                 ruff = {
-                    highlight = { enable = true },
+                    highlight = { enable = false },
                 },
                 svelte = {},
                 tailwindcss = {},
@@ -174,25 +174,4 @@ return {
     },
     { 'hrsh7th/cmp-buffer', lazy = true },
     { 'hrsh7th/cmp-path', lazy = true },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        dependencies = {
-            { 'nvim-treesitter/nvim-treesitter-textobjects' },
-        },
-        config = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = { 'python', 'html', 'javascript', 'css' }, -- Ensure Python grammar is installed
-                highlight = { enable = true }, -- Enable highlighting
-                indent = { enable = true }, -- Optional: enable indentation
-                textobjects = { -- Optional: enable textobjects
-                    select = {
-                        enable = true,
-                    },
-                    move = {
-                        enable = true,
-                    },
-                },
-            })
-        end,
-    },
 }
