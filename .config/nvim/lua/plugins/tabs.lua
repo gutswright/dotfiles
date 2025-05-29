@@ -43,15 +43,15 @@ return {
             local map = vim.api.nvim_set_keymap
             local opts = { noremap = true, silent = true }
             -- Example for your init.lua or similar
-            vim.api.nvim_set_keymap('n', '<BS>tt0', '<Cmd>BufferGoto 1<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt1', '<Cmd>BufferGoto 2<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt2', '<Cmd>BufferGoto 3<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt3', '<Cmd>BufferGoto 4<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt4', '<Cmd>BufferGoto 5<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt5', '<Cmd>BufferGoto 6<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt6', '<Cmd>BufferGoto 7<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt7', '<Cmd>BufferGoto 8<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<BS>tt8', '<Cmd>BufferGoto 9<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>0', '<Cmd>BufferGoto 1<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>1', '<Cmd>BufferGoto 2<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>2', '<Cmd>BufferGoto 3<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>3', '<Cmd>BufferGoto 4<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>4', '<Cmd>BufferGoto 5<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>5', '<Cmd>BufferGoto 6<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>6', '<Cmd>BufferGoto 7<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>7', '<Cmd>BufferGoto 8<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<BS>8', '<Cmd>BufferGoto 9<CR>', { noremap = true, silent = true })
 
             vim.api.nvim_set_keymap(
                 'n',
