@@ -1,26 +1,26 @@
 return {
+
     {
-        'akinsho/bufferline.nvim',
-        name = 'bufferline',
-        version = '*',
-        event = 'VimEnter',
-        keys = {
-            { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle Pin' },
-            { '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete Non-Pinned Buffers' },
-            { '<leader>bo', '<Cmd>BufferLineCloseOthers<CR>', desc = 'Delete Other Buffers' },
-            { '<leader>br', '<Cmd>BufferLineCloseRight<CR>', desc = 'Delete Buffers to the Right' },
-            { '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', desc = 'Delete Buffers to the Left' },
-            { '<S-y>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
-            { '<S-e>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
-            { '[b', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
-            { ']b', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
-            { '[B', '<cmd>BufferLineMovePrev<cr>', desc = 'Move buffer prev' },
-            { ']B', '<cmd>BufferLineMoveNext<cr>', desc = 'Move buffer next' },
+        'romgrk/barbar.nvim',
+        dependencies = {
+            'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+            'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
         },
-        options = {
-            separator_style = 'slope',
-        },
+        opts = { noremap = true, silent = true },
+
+        config = function()
+            local map = vim.api.nvim_set_keymap
+            map('n', 'gt', '<Cmd>tabnext<CR>', { desc = 'Go to next tabpage' })
+            map('n', '<leader>nt', '<Cmd>tabnext<CR>', { desc = 'Go to next tabpage' })
+
+            map('n', 'gT', '<Cmd>tabprevious<CR>', { desc = 'Go to previous tabpage' })
+            map('n', '<leader>tp', '<Cmd>tabprevious<CR>', { desc = 'Go to previous tabpage' })
+
+            map('n', '[t', '<Cmd>tabprevious<CR>', { desc = 'Go to previous tabpage' })
+            map('n', ']t', '<Cmd>tabnext<CR>', { desc = 'Go to next tabpage' })
+        end,
     },
+
     {
         'navarasu/onedark.nvim',
         config = function()
