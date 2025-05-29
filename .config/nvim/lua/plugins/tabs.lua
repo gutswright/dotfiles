@@ -55,9 +55,23 @@ return {
 
             vim.api.nvim_set_keymap(
                 'n',
-                '<BS>tg',
+                '<BS>tr',
+                '<Cmd>BufferNext<CR>',
+                { noremap = true, silent = true, desc = 'Tab right (next)' }
+            )
+
+            vim.api.nvim_set_keymap(
+                'n',
+                '<BS>tl',
+                '<Cmd>BufferNext<CR>',
+                { noremap = true, silent = true, desc = 'Tab left (previous)' }
+            )
+
+            vim.api.nvim_set_keymap(
+                'n',
+                '<BS>ts',
                 '<Cmd>BufferPick<CR>',
-                { noremap = true, silent = true, desc = 'Pick a tab to select' }
+                { noremap = true, silent = true, desc = 'Pick a tab to select (switch)' }
             )
             vim.api.nvim_set_keymap(
                 'n',
