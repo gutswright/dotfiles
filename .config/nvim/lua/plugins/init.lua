@@ -30,6 +30,7 @@ require('lazy').setup({
         require('plugins.markdown_preview'),
         require('plugins.snacks'),
         require('plugins.tabs'),
+        require('plugins.theme'),
         require('plugins.format'),
         require('plugins.flutter_tools'),
         -- add your plugins here
