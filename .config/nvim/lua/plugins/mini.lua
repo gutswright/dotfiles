@@ -1,4 +1,3 @@
--- =ip to format stuff
 return {
     {
         'echasnovski/mini.nvim',
