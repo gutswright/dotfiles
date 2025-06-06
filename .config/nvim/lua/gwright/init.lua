@@ -111,16 +111,14 @@ vim.keymap.set('n', 'l', 'e', { noremap = true })
 
 vim.keymap.set('v', 'y', 'h', { noremap = true })
 vim.keymap.set('v', 'h', 'j', { noremap = true })
-vim.keymap.set('v', 'a', 'k', { noremap = true })
+vim.keymap.set('v', 'a', 'k', { noremap = true }) -- Keep this for up movement
 vim.keymap.set('v', 'e', 'l', { noremap = true })
-
 vim.keymap.set('v', '_', "'", { noremap = true })
-vim.keymap.set('v', 'va', 'vj', { noremap = true })
-vim.keymap.set('v', 'vaa', 'vjj', { noremap = true })
+-- vim.keymap.set('v', 'va', 'vj', { noremap = true })  -- Use 'va' instead of 'a'
+-- vim.keymap.set('v', 'vaa', 'vjj', { noremap = true })
 vim.keymap.set('v', "'", 'y', { noremap = true })
 vim.keymap.set('v', '-', ',', { noremap = true })
 vim.keymap.set('v', 'l', 'e', { noremap = true })
-
 vim.filetype.add({
     extension = {
         m = 'matlab',

@@ -29,7 +29,38 @@ return {
             require('mini.colors').setup({})
             require('mini.comment').setup({})
             require('mini.surround').setup({})
-            require('mini.ai').setup({})
+
+            require('mini.ai').setup({
+                -- You might also want to configure mini.ai to work better with your layout
+                -- This affects text objects which surround uses
+                custom_textobjects = nil,
+
+                -- Module mappings
+                mappings = {
+                    -- Around textobject
+                    around = 'j',
+                    -- Inside textobject
+                    inside = 'i',
+
+                    -- Next textobject
+                    around_next = 'jn',
+                    inside_next = 'in',
+
+                    -- Last textobject
+                    around_last = 'jl',
+                    inside_last = 'il',
+
+                    -- Move cursor to corresponding edge of `a` textobject
+                    goto_left = 'g[',
+                    goto_right = 'g]',
+                },
+
+                -- Number of lines within which textobject is searched
+                n_lines = 50,
+
+                -- How to search for object (first inside current line, then inside neighborhood)
+                search_method = 'cover_or_next',
+            })
             vim.api.nvim_create_autocmd('Filetype', {
                 pattern = 'dart',
                 callback = function()
