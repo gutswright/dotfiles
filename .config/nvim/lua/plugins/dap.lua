@@ -17,7 +17,16 @@ return {
                 commented = true,
             })
 
+            -- Setup Python debugging with uv
+            -- First setup the basic Python adapter
             dap_python.setup('python')
+
+            -- Override the Python adapter to use uv run
+            dap.adapters.python = {
+                type = 'executable',
+                command = 'uv',
+                args = { 'run', 'python', '-m', 'debugpy.adapter' },
+            }
 
             vim.fn.sign_define('DapBreakPoint', {
                 text = '0',

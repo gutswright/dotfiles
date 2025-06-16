@@ -3,6 +3,12 @@ return {
         'spencer-thompson/multiplayer.nvim',
         opts = {},
     },
+    -- {
+    --     'rk4-dev/keytrack.nvim',
+    --     opts = {
+    --         url = 'api.rk4.localhost/v1/keytrack',
+    --     },
+    -- },
     { 'nvim-lua/plenary.nvim' },
     {
         --NOTE treesitter looks at the file and highlights accordingly
