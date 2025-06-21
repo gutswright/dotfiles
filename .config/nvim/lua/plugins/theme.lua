@@ -5,6 +5,9 @@ return {
             -- vim.cmd("colorscheme onedark")
             require('onedark').setup({
                 style = 'deep',
+                highlights = {
+                    Comment = { fg = '#7aa2f7' },
+                },
             })
             require('onedark').load()
         end,
