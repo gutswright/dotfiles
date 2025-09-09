@@ -43,9 +43,8 @@ return {
             })
 
             local servers = {
-                ruff = {
-                    highlight = { enable = true },
-                },
+                ruff = {},
+                pyright = {},
                 svelte = {},
                 tailwindcss = {},
                 kotlin_language_server = {},
@@ -169,30 +168,20 @@ return {
                 end,
             })
 
-            vim.diagnostic.config({ virtual_text = false })
-        end,
-    },
-    { 'hrsh7th/cmp-buffer', lazy = true },
-    { 'hrsh7th/cmp-path', lazy = true },
-    {
-        'nvim-treesitter/nvim-treesitter',
-        dependencies = {
-            { 'nvim-treesitter/nvim-treesitter-textobjects' },
-        },
-        config = function()
-            require('nvim-treesitter.configs').setup({
-                ensure_installed = { 'python' }, -- Ensure Python grammar is installed
-                highlight = { enable = true }, -- Enable highlighting
-                indent = { enable = true }, -- Optional: enable indentation
-                textobjects = { -- Optional: enable textobjects
-                    select = {
-                        enable = true,
-                    },
-                    move = {
-                        enable = true,
+            -- Update diagnostic config to use new sign configuration
+            vim.diagnostic.config({ 
+                virtual_text = false,
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "",
+                        [vim.diagnostic.severity.WARN] = "",
+                        [vim.diagnostic.severity.HINT] = "",
+                        [vim.diagnostic.severity.INFO] = "",
                     },
                 },
             })
         end,
     },
+    { 'hrsh7th/cmp-buffer', lazy = true },
+    { 'hrsh7th/cmp-path', lazy = true },
 }

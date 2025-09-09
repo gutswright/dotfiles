@@ -1,14 +1,19 @@
 return {
     {
         'spencer-thompson/multiplayer.nvim',
+        build = 'cd comms; cargo build --release',
         opts = {},
     },
-    -- {
-    --     'rk4-dev/keytrack.nvim',
-    --     opts = {
-    --         url = 'api.rk4.localhost/v1/keytrack',
-    --     },
-    -- },
+    {
+        'rk4-dev/keytrack.nvim',
+        enabled = true,
+        event = 'VeryLazy',
+        name = 'keytrack',
+        opts = {
+            url = 'https://api.rk4.dev/keytrack/key',
+            -- url = 'api.rk4.localhost/keytrack/key',
+        },
+    },
     { 'nvim-lua/plenary.nvim' },
     {
         --NOTE treesitter looks at the file and highlights accordingly
@@ -19,7 +24,7 @@ return {
         config = function()
             require('nvim-treesitter.configs').setup({
                 -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-                ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline' },
+                ensure_installed = { 'c', 'lua', 'vim', 'vimdoc', 'query', 'markdown', 'markdown_inline', 'python' },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
@@ -41,14 +46,22 @@ return {
                     -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
                     -- the name of the parser)
                     -- list of language that will be disabled
-                    disable = { 'c', 'rust' },
+                    -- disable = { 'rust' },
                     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
                     disable = function(lang, buf)
+                        if lang == 'rust' then
+                            return true
+                        end
+                        -- Never disable Python highlighting
+                        if lang == 'python' then
+                            return false
+                        end
                         local max_filesize = 100 * 1024 -- 100 KB
                         local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
                         if ok and stats and stats.size > max_filesize then
                             return true
                         end
+                        return false
                     end,
 
                     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.

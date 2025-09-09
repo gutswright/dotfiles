@@ -98,3 +98,4 @@ shell-integration = fish
 
 config-file = trial/config
 
+keybind = shift+enter=text:\n

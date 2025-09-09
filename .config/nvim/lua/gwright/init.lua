@@ -119,6 +119,40 @@ vim.keymap.set('v', '_', "'", { noremap = true })
 vim.keymap.set('v', "'", 'y', { noremap = true })
 vim.keymap.set('v', '-', ',', { noremap = true })
 vim.keymap.set('v', 'l', 'e', { noremap = true })
+
+-- Visual Block mode specific mappings for insertion/editing
+-- Basic insert operations
+vim.keymap.set('x', 'I', 'I', { noremap = true, desc = 'Insert at beginning of block' })
+vim.keymap.set('x', 'A', 'A', { noremap = true, desc = 'Insert at end of block' })
+
+-- Use remapped keys for insert operations in visual block
+vim.keymap.set('x', 'j', 'I', { noremap = true, desc = 'Insert at beginning of block (remapped)' })
+vim.keymap.set('x', 'J', 'A', { noremap = true, desc = 'Insert at end of block (remapped)' })
+
+-- Change operations in visual block
+vim.keymap.set('x', 'c', 'c', { noremap = true, desc = 'Change selected block' })
+vim.keymap.set('x', 'C', 'C', { noremap = true, desc = 'Change to end of lines in block' })
+
+-- Delete and insert in visual block
+vim.keymap.set('x', 's', 'c', { noremap = true, desc = 'Substitute selected block' })
+vim.keymap.set('x', 'S', 'S', { noremap = true, desc = 'Substitute lines in block' })
+
+-- Replace character in visual block
+vim.keymap.set('x', 'r', 'r', { noremap = true, desc = 'Replace characters in block' })
+
+-- Additional useful visual block operations
+vim.keymap.set('x', 'o', 'o', { noremap = true, desc = 'Go to other end of block' })
+vim.keymap.set('x', 'O', 'O', { noremap = true, desc = 'Go to other corner of block' })
+
+-- Movement mappings for visual block (inherit from visual mode)
+vim.keymap.set('x', 'y', 'h', { noremap = true })
+vim.keymap.set('x', 'h', 'j', { noremap = true })
+vim.keymap.set('x', 'a', 'k', { noremap = true })
+vim.keymap.set('x', 'e', 'l', { noremap = true })
+vim.keymap.set('x', '_', "'", { noremap = true })
+vim.keymap.set('x', "'", 'y', { noremap = true })
+vim.keymap.set('x', '-', ',', { noremap = true })
+vim.keymap.set('x', 'l', 'e', { noremap = true })
 vim.filetype.add({
     extension = {
         m = 'matlab',
@@ -135,4 +169,19 @@ vim.filetype.add({
     pattern = {
         ['.*%.m'] = 'matlab',
     },
+})
+
+-- Fix TreeSitter highlighting after formatting
+vim.api.nvim_create_autocmd('BufWritePost', {
+    pattern = '*.py',
+    callback = function()
+        -- Re-enable TreeSitter highlighting for Python files after save
+        vim.schedule(function()
+            local bufnr = vim.api.nvim_get_current_buf()
+            if vim.bo[bufnr].filetype == 'python' then
+                -- Force TreeSitter to re-enable highlighting
+                vim.cmd('TSEnable highlight python')
+            end
+        end)
+    end,
 })

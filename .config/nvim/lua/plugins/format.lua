@@ -38,10 +38,9 @@ return {
                     scss = { 'prettierd' },
                     svelte = { 'prettierd' },
                 },
-                format_on_save = {
-                    async = false,
+                format_after_save = {
+                    async = true,
                     lsp_fallback = true,
-                    timeout_ms = 500,
                 },
             })
         end,
