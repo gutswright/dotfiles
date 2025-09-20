@@ -28,7 +28,7 @@ return {
             end, { desc = 'Open mini file finder' })
             require('mini.colors').setup({})
             require('mini.comment').setup({})
-            require('mini.surround').setup({})
+            -- require('mini.surround').setup({})
 
             require('mini.ai').setup({
                 -- You might also want to configure mini.ai to work better with your layout

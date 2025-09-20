@@ -31,10 +31,11 @@ require('lazy').setup({
         require('plugins.markdown_preview'),
         require('plugins.snacks'),
         require('plugins.tabs'),
-        require('plugins.avanteai'),
+        -- require('plugins.avanteai'),
         require('plugins.theme'),
+        require('plugins.sql'),
         -- require('plugins.format'),
-        require('plugins.flutter_tools'),
+        -- require('plugins.flutter_tools'),
         -- add your plugins here
     },
     -- Configure any other settings here. See the documentation for more details.

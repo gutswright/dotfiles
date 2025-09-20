@@ -1,19 +1,19 @@
 return {
-    {
-        'spencer-thompson/multiplayer.nvim',
-        build = 'cd comms; cargo build --release',
-        opts = {},
-    },
-    {
-        'rk4-dev/keytrack.nvim',
-        enabled = true,
-        event = 'VeryLazy',
-        name = 'keytrack',
-        opts = {
-            url = 'https://api.rk4.dev/keytrack/key',
-            -- url = 'api.rk4.localhost/keytrack/key',
-        },
-    },
+    -- {
+    --     'spencer-thompson/multiplayer.nvim',
+    --     build = 'cd comms; cargo build --release',
+    --     opts = {},
+    -- },
+    -- {
+    --     'rk4-dev/keytrack.nvim',
+    --     enabled = true,
+    --     event = 'VeryLazy',
+    --     name = 'keytrack',
+    --     opts = {
+    --         url = 'https://api.rk4.dev/keytrack/key',
+    --         -- url = 'api.rk4.localhost/keytrack/key',
+    --     },
+    -- },
     { 'nvim-lua/plenary.nvim' },
     {
         --NOTE treesitter looks at the file and highlights accordingly
