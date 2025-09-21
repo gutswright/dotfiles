@@ -1,6 +1,11 @@
 theme=Slate
 
-font-family = "Source Code Pro Semibold"
+# TO TROLL -> font-family="Symbols Nerd Font"
+# font-family = "Source Code Pro Semibold"
+# font-family= "CaskaydiaCove Nerd Font"
+font-family="FiraCode Nerd Font Propo SemBd"
+# font-family="FiraCode Nerd Font SemBd"
+# font-family = "JetBrainsMono NFM Regular"
 # font-family = "Source Code Pro Light"
 # font-family = "Noto Sans Mono Regular" 
 # font-family = "SourceCodeVF Bold"
@@ -54,32 +59,36 @@ keybind = alt+s>o=write_screen_file:open
 
 
 # theme =Abernathy 
-theme = tokyonight 
+# theme = 3024 Night
 # theme = deep
+theme = TokyoNight
 # theme = ENCOM 
 window-theme = ghostty
 window-titlebar-background = #060313
 gtk-titlebar = true
-gtk-tabs-location = right
+gtk-tabs-location = top
 adw-toolbar-style = raised
 cursor-style = underline 
 cursor-color = #A06383
 cursor-opacity = 1
 adjust-cursor-thickness = 200%
 
-# palette = 0=#703983
-# palette = 1=#909090
-# palette = 2=#D84040
+# palette = 0=#EFBD5D
+# palette = 1=#93A4C3
+# palette = 2=#8BCD5B
 # palette = 3=#884924
-# palette = 4=#B9B28A
-# palette = 5=#023912
-# palette = 6=#FFEFE3
+#
+# palette = 4=#01A0E4
+#
+# palette = 5=#DD9046
+# palette = 6=#D84040
 # palette = 10=#D76C82
-# palette = 10=#8E1616
+# palette = 10=#C75AE8
 # palette = 11=#EBE8DB
-# palette = 12=#903347
-# palette = 13=#903347
-# palette = 14=#903347
+# palette = 12=#B9B28A
+# palette = 13=#F65866
+# palette = 14=#34BFD0
+#
 # palette = 15=#903347
 #
 # background = #1A1A19
