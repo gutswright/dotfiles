@@ -14,7 +14,7 @@ return {
       require('onedark').load()
 
       vim.g.comments_on = true
-      vim.keymap.set('n', 'cc', function()
+      vim.keymap.set('n', '<leader>cc', function()
         if vim.g.comments_on then
           vim.api.nvim_set_hl(0, "@comment", {fg = "#455574", italic=true})
           vim.g.comments_on = false

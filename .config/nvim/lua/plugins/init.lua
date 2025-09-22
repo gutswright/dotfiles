@@ -25,7 +25,7 @@ require("lazy").setup({
 		require("plugins.treesitter"),
 		require("plugins.lsp"),
 		require("plugins.none-ls"),
-		require("plugins.dashboard"),
+		-- require("plugins.dashboard"),
     require("plugins.completions"),
 	},
 	install = { colorscheme = { "habamax" } },

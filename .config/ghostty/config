@@ -1,9 +1,18 @@
 theme=Slate
-
 # TO TROLL -> font-family="Symbols Nerd Font"
 # font-family = "Source Code Pro Semibold"
 # font-family= "CaskaydiaCove Nerd Font"
-font-family="FiraCode Nerd Font Propo SemBd"
+font-family="FiraCode Nerd Font SemBd"
+# font-family-italic="Noto Sans Sinhala UI Black"
+
+# font-family-italic="Noto Sans Myanmar Black"
+font-family-italic="Noto Sans Lao Black"
+# font-variation-italic="wght=900"
+# font-family-italic="Noto Sans Tamil UI Black"
+# font-family-bold = "FiraCode Nerd Font Propo Bold"
+# font-codepoint-map = U+1F300-U+1FAFF="Noto Emoji"
+# font-codepoint-map = U+E0A0-U+E0A3="Symbols Nerd Font"
+# font-variation=wght=90
 # font-family="FiraCode Nerd Font SemBd"
 # font-family = "JetBrainsMono NFM Regular"
 # font-family = "Source Code Pro Light"

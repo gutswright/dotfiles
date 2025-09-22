@@ -2,8 +2,8 @@
 
 vim.o.clipboard = 'unnamedplus' 
 vim.opt.clipboard = 'unnamedplus'
-vim.keymap.set('i', 'jk', '<esc>')
-vim.keymap.set('i', 'JK', '<esc>')
+-- vim.keymap.set('i', 'jk', '<esc>')
+-- vim.keymap.set('i', 'JK', '<esc>')
 
 vim.wo.number = true
 vim.opt.rnu = true
