@@ -17,6 +17,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities,
 				-- settings = {
@@ -32,6 +33,8 @@ return {
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-		end,
+      vim.api.nvim_set_hl(0, "@lsp.type.comment", {})
+
+    end,
 	},
 }
