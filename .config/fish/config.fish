@@ -27,7 +27,7 @@ zoxide init fish | source
 
 fish_add_path /home/gutswright/.cargo/bin/
 
-abbr --add cd z
+# abbr --add cd z
 # alias ls="eza --icons=auto --group-directories-first"
 abbr --add tree "lsd --tree"
 alias ls="lsd"

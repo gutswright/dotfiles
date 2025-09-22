@@ -55,7 +55,7 @@ return {
 
             local opts = { noremap = true, silent = true }
 
-            vim.keymap.set('n', '<Leader>d', function()
+            vim.keymap.set('n', '<Leader>dp', function()
                 dap.toggle_breakpoint()
             end, opts)
 

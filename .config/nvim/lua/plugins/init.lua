@@ -25,11 +25,11 @@ require("lazy").setup({
 		require("plugins.treesitter"),
 		require("plugins.lsp"),
 		require("plugins.none-ls"),
-		-- require("plugins.dashboard"),
+    require("plugins.snacks"),
     require("plugins.completions"),
 	},
 	install = { colorscheme = { "habamax" } },
-	checker = { enabled = true },
+	checker = { enabled = false},
 })
 
 -- everything is global by default

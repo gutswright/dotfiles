@@ -64,3 +64,21 @@ vim.keymap.set('x', 'y', 'h', { noremap = true })
 vim.keymap.set('x', 'h', 'j', { noremap = true })
 vim.keymap.set('x', 'a', 'k', { noremap = true })
 vim.keymap.set('x', 'e', 'l', { noremap = true })
+
+
+vim.keymap.set('n', '<C-w>y', '<C-w>h', { noremap = true })
+vim.keymap.set('n', '<C-w>h', '<C-w>j', { noremap = true })
+vim.keymap.set('n', '<C-w>a', '<C-w>k', { noremap = true })
+vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
+
+-- Set fillchars to use thicker characters
+vim.opt.fillchars = {
+  horiz = '▀',
+  horizup = '▀',
+  horizdown = '▄',
+  vert = '▌',
+  -- '█' 
+  vertleft = '▌',
+  vertright = '▐',
+  verthoriz = '█',
+}
