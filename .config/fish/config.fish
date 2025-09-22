@@ -1,5 +1,27 @@
 set -g fish_key_bindings fish_vi_key_bindings 
 
+bind --mode default y backward-char
+bind --mode default l forward-word  
+bind --mode default e forward-char
+bind --mode default j repaint-mode -m insert
+bind --mode default J beginning-of-line repaint-mode -m insert
+
+bind --mode default "''" kill-whole-line yank 
+bind --mode default "'",w kill-word yank 
+bind --mode default "'",b forward-single-char backward-kill-word yank 
+bind --mode default "'",\$ kill-line yank 
+bind --mode default "'",i,w forward-single-char forward-single-char backward-word kill-word yank
+bind --mode default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank
+bind --mode default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection
+bind --mode default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection
+
+bind --mode visual l forward-word
+bind --mode visual y backward-char
+bind --mode visual e forward-char
+bind --mode visual "'" -m default kill-selection yank fish_clipboard_copy end-selection repaint-mode
+
+fzf --fish | source
+
 atuin init fish | source
 zoxide init fish | source
 
