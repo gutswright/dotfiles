@@ -30,7 +30,21 @@ fish_add_path /home/gutswright/.cargo/bin/
 # abbr --add cd z
 # alias ls="eza --icons=auto --group-directories-first"
 abbr --add tree "lsd --tree"
-alias ls="lsd"
+
+# alias ls="lsd"
+alias firefoxd="firefox-developer-edition"
+alias code="code --enable-features=UseOzonePlatform  --ozone-platform=wayland"
+alias steam='env SDL_VIDEODRIVER=wayland GDK_BACKEND=wayland QT_QPA_PLATFORM=wayland DISPLAY=:0 steam'
+alias ls="eza --icons=auto --group-directories-first"
+alias vimlab="matlab -nodesktop -nosplash" 
+alias fontforge="GDK_SCALE=2 fontforge -nosplash"
+
+# # directories
+# alias ..="cd .." \
+#       ...="cd ../.." \
+#       ....="cd ../../.." \
+#       .....="cd ../../../.." \
+#       ......="cd ../../../../.."
 
 
 set -gx EDITOR nvim

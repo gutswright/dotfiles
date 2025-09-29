@@ -1,8 +1,8 @@
 theme=Slate
 # TO TROLL -> font-family="Symbols Nerd Font"
-# font-family = "Source Code Pro Semibold"
+font-family = "Source Code Pro Semibold"
 # font-family= "CaskaydiaCove Nerd Font"
-font-family="FiraCode Nerd Font SemBd"
+# font-family="FiraCode Nerd Font SemBd"
 # font-family-italic="Noto Sans Sinhala UI Black"
 
 # font-family-italic="Noto Sans Myanmar Black"
