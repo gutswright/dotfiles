@@ -1,34 +1,44 @@
 set -g fish_key_bindings fish_vi_key_bindings 
 
-bind --mode default y backward-char
-bind --mode default l forward-word  
-bind --mode default e forward-char
-bind --mode default j repaint-mode -m insert
-bind --mode default J beginning-of-line repaint-mode -m insert
+bind -M default y backward-char
+bind -M default l forward-word  
+bind -M default e forward-char
+bind -M default j repaint-mode -m insert
+bind -M default J beginning-of-line repaint-mode -m insert
 
-bind --mode default "''" kill-whole-line yank 
-bind --mode default "'",w kill-word yank 
-bind --mode default "'",b forward-single-char backward-kill-word yank 
-bind --mode default "'",\$ kill-line yank 
-bind --mode default "'",i,w forward-single-char forward-single-char backward-word kill-word yank
-bind --mode default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank
-bind --mode default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection
-bind --mode default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection
+bind -M default "''" kill-whole-line yank 
+bind -M default "'",w kill-word yank 
+bind -M default "'",b forward-single-char backward-kill-word yank 
+bind -M default "'",\$ kill-line yank 
+bind -M default "'",i,w forward-single-char forward-single-char backward-word kill-word yank
+bind -M default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank
+bind -M default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection
+bind -M default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection
 
-bind --mode visual l forward-word
-bind --mode visual y backward-char
-bind --mode visual e forward-char
-bind --mode visual "'" -m default kill-selection yank fish_clipboard_copy end-selection repaint-mode
+bind -M visual l forward-word
+bind -M visual y backward-char
+bind -M visual e forward-char
+bind -M visual "'" -m default kill-selection yank fish_clipboard_copy end-selection repaint-mode
 
 fzf --fish | source
 
-atuin init fish | source
 zoxide init fish | source
 
 fish_add_path /home/gutswright/.cargo/bin/
 
+set -gx ATUIN_NOBIND true
+atuin init fish | source
+
+# Manually bind atuin keys (without deprecated -k flag)
+bind \cr _atuin_search
+bind -M insert \cr _atuin_search
+bind \eOA _atuin_bind_up
+bind \e\[A _atuin_bind_up
+bind -M insert \eOA _atuin_bind_up
+bind -M insert \e\[A _atuin_bind_up
+
 # abbr --add cd z
-# alias ls="eza --icons=auto --group-directories-first"
+alias ls="eza --icons=auto --group-directories-first"
 abbr --add tree "lsd --tree"
 
 # alias ls="lsd"
@@ -38,13 +48,6 @@ alias steam='env SDL_VIDEODRIVER=wayland GDK_BACKEND=wayland QT_QPA_PLATFORM=way
 alias ls="eza --icons=auto --group-directories-first"
 alias vimlab="matlab -nodesktop -nosplash" 
 alias fontforge="GDK_SCALE=2 fontforge -nosplash"
-
-# # directories
-# alias ..="cd .." \
-#       ...="cd ../.." \
-#       ....="cd ../../.." \
-#       .....="cd ../../../.." \
-#       ......="cd ../../../../.."
 
 
 set -gx EDITOR nvim
@@ -86,5 +89,13 @@ end
 if status is-interactive
 
 end
+
+
+# # directories
+# alias ..="cd .." \
+#       ...="cd ../.." \
+#       ....="cd ../../.." \
+#       .....="cd ../../../.." \
+#       ......="cd ../../../../.."
 
 
