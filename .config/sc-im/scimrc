@@ -1,3 +1,4 @@
+# https://raw.githubusercontent.com/andmarti1424/sc-im/freeze/src/doc
 
 define_color "customgray" 70 70 70 
 
@@ -8,3 +9,32 @@ color "type=HEADINGS_ODD fg=BLACK bg=WHITE bold=0 dim=0"
 color "type=NUMB fg=RED bg=DEFAULT_COLOR bold=1 dim=0"
 color "type=STRG fg=WHITE bg=DEFAULT_COLOR bold=0 dim=0"
 color "type=GRID_EVEN fg=BLACK bg=customgray underline=1 italic=1"
+
+
+nnoremap "y" "h"
+nnoremap "h" "j"
+nnoremap "a" "k"
+nnoremap "e" "l"
+nnoremap "r" "e"
+
+# nmap "j" "a" 
+# nmap "J" "A" 
+# nmap "_" "'" 
+# nmap "'" "y" 
+# nmap "''" "yy"
+# nmap "k" "J"
+# nmap "-" ","
+# nmap "l" "e"
+
+vnoremap "y" "h"
+vnoremap "h" "j"
+vnoremap "a" "k"
+vnoremap "e" "l"
+vnoremap "r" "e"
+
+# vmap "_" "'"
+ 
+# vmap "'" "y"
+# vmap "-" ","
+# vmap "l" "e"
+

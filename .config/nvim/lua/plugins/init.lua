@@ -26,6 +26,7 @@ require("lazy").setup({
 		require("plugins.lsp"),
 		require("plugins.none-ls"),
     require("plugins.snacks"),
+    -- require("plugins.surround"),
     -- require("plugins.completions"),
     require("plugins.blink-cmp"),
 	},
