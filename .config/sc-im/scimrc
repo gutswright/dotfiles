@@ -6,35 +6,59 @@ color "type=DEFAULT fg=BLACK bg=customgray underline=1 italic=1"
 
 color "type=HEADINGS fg=BLACK bg=WHITE bold=0 dim=0"
 color "type=HEADINGS_ODD fg=BLACK bg=WHITE bold=0 dim=0"
-color "type=NUMB fg=RED bg=DEFAULT_COLOR bold=1 dim=0"
+color "type=NUMB fg=GREEN bg=DEFAULT_COLOR bold=1 dim=0"
+
+color "type=CELL_NEGATIVE fg=RED bg=DEFAULT_COLOR bold=1 dim=0"
+
 color "type=STRG fg=WHITE bg=DEFAULT_COLOR bold=0 dim=0"
 color "type=GRID_EVEN fg=BLACK bg=customgray underline=1 italic=1"
+
+set default_copy_to_clipboard_cmd="wl-copy <"
+set default_paste_from_clipboard_cmd="wl-paste"
 
 
 nnoremap "y" "h"
 nnoremap "h" "j"
 nnoremap "a" "k"
 nnoremap "e" "l"
-nnoremap "r" "e"
+# nnoremap "ie" "e"
 
-# nmap "j" "a" 
-# nmap "J" "A" 
-# nmap "_" "'" 
-# nmap "'" "y" 
-# nmap "''" "yy"
-# nmap "k" "J"
-# nmap "-" ","
-# nmap "l" "e"
+nnoremap "zy" "zh"
+nnoremap "ze" "zl"
+nnoremap "zY" "zH"
+nnoremap "zE" "zL"
+
+
+nnoremap "j" "a" 
+nnoremap "J" "A" 
+nnoremap "_" "'" 
+
+nnoremap "''" "yy:ccopy<CR>"
+nnoremap "'c" "yc"
+nnoremap "'r" "yr"
+
+nnoremap "k" "J"
+nnoremap "-" ","
+nnoremap "l" "e"
 
 vnoremap "y" "h"
 vnoremap "h" "j"
 vnoremap "a" "k"
 vnoremap "e" "l"
-vnoremap "r" "e"
+# vnoremap "r" "e"
 
-# vmap "_" "'"
- 
-# vmap "'" "y"
-# vmap "-" ","
-# vmap "l" "e"
+vnoremap "_" "'"
+vnoremap "'" "y"
+vnoremap "-" ","
+vnoremap "l" "e"
 
+enoremap "y" "h"
+enoremap "h" "j"
+enoremap "a" "k"
+enoremap "e" "l"
+
+# :lua dofile("/usr/local/share/sc-im/lua/my_macros.lua"); list_functions()
+
+# LUAFILE "~/.config/sc-im/lua/my_macros.lua"
+
+# nnoremap "fgm" ":luafile ~/.config/sc-im/lua/get_max.lua\n"  # fucntion get max

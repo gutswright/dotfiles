@@ -40,6 +40,7 @@ bind -M insert \e\[A _atuin_bind_up
 # abbr --add cd z
 alias ls="eza --icons=auto --group-directories-first"
 abbr --add tree "lsd --tree"
+abbr --add scim sc-im
 
 # alias ls="lsd"
 alias firefoxd="firefox-developer-edition"
@@ -48,7 +49,6 @@ alias steam='env SDL_VIDEODRIVER=wayland GDK_BACKEND=wayland QT_QPA_PLATFORM=way
 alias ls="eza --icons=auto --group-directories-first"
 alias vimlab="matlab -nodesktop -nosplash" 
 alias fontforge="GDK_SCALE=2 fontforge -nosplash"
-alias gam="/home/gutswright/bin/gam7/gam"
 
 
 set -gx EDITOR nvim
