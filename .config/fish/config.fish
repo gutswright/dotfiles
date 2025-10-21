@@ -3,8 +3,9 @@ set -g fish_key_bindings fish_vi_key_bindings
 bind -M default y backward-char
 bind -M default l forward-word  
 bind -M default e forward-char
-bind -M default j repaint-mode -m insert
-bind -M default J beginning-of-line repaint-mode -m insert
+bind -M default j forward-char repaint-mode -m insert
+bind -M default J end-of-line repaint-mode -m insert
+# bind -M default a up-or-search
 
 bind -M default "''" kill-whole-line yank 
 bind -M default "'",w kill-word yank 
@@ -32,10 +33,10 @@ atuin init fish | source
 # Manually bind atuin keys (without deprecated -k flag)
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
-bind \eOA _atuin_bind_up
-bind \e\[A _atuin_bind_up
-bind -M insert \eOA _atuin_bind_up
-bind -M insert \e\[A _atuin_bind_up
+# bind \eOA _atuin_bind_up
+# bind \e\[A _atuin_bind_up
+# bind -M insert \eOA _atuin_bind_up
+# bind -M insert \e\[A _atuin_bind_up
 
 # abbr --add cd z
 alias ls="eza --icons=auto --group-directories-first"

@@ -66,6 +66,10 @@ keybind = super+shift+ctrl+alt+q=new_window
 keybind = alt+s>w=write_screen_file:paste
 keybind = alt+s>o=write_screen_file:open
 
+# keybind = alt+a=adjust_selection:up
+# keybind = a=cursor_key:application:up:normal:up
+
+
 
 # theme =Abernathy 
 # theme = 3024 Night
