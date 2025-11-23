@@ -8,7 +8,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.wo.number = true
 vim.opt.rnu = true
 
-vim.o.mouse = 'a'
+-- vim.o.mouse = 'a'
 
 vim.opt.smartcase = true -- makes searching easier
 vim.opt.ignorecase = true
