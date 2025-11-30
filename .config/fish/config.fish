@@ -41,20 +41,22 @@ bind -M insert \e\[A _atuin_bind_up
 # abbr --add cd z
 alias ls="eza --icons=auto --group-directories-first"
 abbr --add tree "lsd --tree"
-abbr --add scim sc-im
 
 # alias ls="lsd"
+alias scim="sc-im"
 alias firefoxd="firefox-developer-edition"
 alias code="code --enable-features=UseOzonePlatform  --ozone-platform=wayland"
 alias steam='env SDL_VIDEODRIVER=wayland GDK_BACKEND=wayland QT_QPA_PLATFORM=wayland DISPLAY=:0 steam'
 alias ls="eza --icons=auto --group-directories-first"
 alias vimlab="matlab -nodesktop -nosplash" 
 alias fontforge="GDK_SCALE=2 fontforge -nosplash"
+alias libreoffice="GDK_SCALE=2 GDK_DPI_SCALE=1.5 libreoffice --calc"
 
 
 set -gx EDITOR nvim
 
 set -U fish_user_paths /opt/google-cloud-cli/bin $fish_user_paths
+set -U fish_user_paths /usr/bin/vendor_perl $fish_user_paths
 
 bind \co ranger-cd
 
