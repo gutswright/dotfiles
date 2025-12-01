@@ -1,6 +1,6 @@
 -- In case anything every breaks, this file will still run (if something in the plugins dir breaks nvim will be O.K.)
 
-vim.o.clipboard = 'unnamedplus' 
+vim.o.clipboard = 'unnamedplus'
 vim.opt.clipboard = 'unnamedplus'
 -- vim.keymap.set('i', 'jk', '<esc>')
 -- vim.keymap.set('i', 'JK', '<esc>')
@@ -65,7 +65,6 @@ vim.keymap.set('x', 'h', 'j', { noremap = true })
 vim.keymap.set('x', 'a', 'k', { noremap = true })
 vim.keymap.set('x', 'e', 'l', { noremap = true })
 
-
 vim.keymap.set('n', '<C-w>y', '<C-w>h', { noremap = true })
 vim.keymap.set('n', '<C-w>h', '<C-w>j', { noremap = true })
 vim.keymap.set('n', '<C-w>a', '<C-w>k', { noremap = true })
@@ -73,12 +72,12 @@ vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
 
 -- Set fillchars to use thicker characters
 vim.opt.fillchars = {
-  horiz = '▀',
-  horizup = '▀',
-  horizdown = '▄',
-  vert = '▌',
-  -- '█' 
-  vertleft = '▌',
-  vertright = '▐',
-  verthoriz = '█',
+    horiz = '▀',
+    horizup = '▀',
+    horizdown = '▄',
+    vert = '▌',
+    -- '█'
+    vertleft = '▌',
+    vertright = '▐',
+    verthoriz = '█',
 }
