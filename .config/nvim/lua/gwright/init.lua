@@ -43,7 +43,8 @@ vim.keymap.set('n', 'l', 'e', { noremap = true })
 
 vim.keymap.set('v', 'y', 'h', { noremap = true })
 vim.keymap.set('v', 'h', 'j', { noremap = true })
-vim.keymap.set('v', 'a', 'k', { noremap = true })
+-- vim.keymap.set('v', 'a', 'k', { noremap = true })
+vim.keymap.set('v', 'o', 'k', { noremap = true })
 vim.keymap.set('v', 'e', 'l', { noremap = true })
 vim.keymap.set('v', '_', "'", { noremap = true })
 
@@ -72,12 +73,12 @@ vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
 
 -- Set fillchars to use thicker characters
 vim.opt.fillchars = {
-    horiz = '▀',
-    horizup = '▀',
-    horizdown = '▄',
-    vert = '▌',
-    -- '█'
-    vertleft = '▌',
-    vertright = '▐',
-    verthoriz = '█',
+  horiz = '▀',
+  horizup = '▀',
+  horizdown = '▄',
+  vert = '▌',
+  -- '█'
+  vertleft = '▌',
+  vertright = '▐',
+  verthoriz = '█',
 }
