@@ -5,6 +5,7 @@ return {
       require('mason').setup()
     end,
   },
+  { 'nvim-lua/plenary.nvim' },
   {
     'williamboman/mason-lspconfig.nvim',
     config = function()

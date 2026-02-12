@@ -7,14 +7,14 @@ bind -M default j forward-char repaint-mode -m insert
 bind -M default J end-of-line repaint-mode -m insert
 # bind -M default a up-or-search
 
-bind -M default "''" kill-whole-line yank
-bind -M default "'",w kill-word yank
-bind -M default "'",b forward-single-char backward-kill-word yank
-bind -M default "'",\$ kill-line yank
-bind -M default "'",i,w forward-single-char forward-single-char backward-word kill-word yank
-bind -M default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank
-bind -M default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection
-bind -M default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection
+bind -M default "''" kill-whole-line yank fish_clipboard_copy
+bind -M default "'",w kill-word yank fish_clipboard_copy
+bind -M default "'",b forward-single-char backward-kill-word yank fish_clipboard_copy
+bind -M default "'",\$ kill-line yank fish_clipboard_copy
+bind -M default "'",i,w forward-single-char forward-single-char backward-word kill-word yank fish_clipboard_copy
+bind -M default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank fish_clipboard_copy
+bind -M default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection fish_clipboard_copy
+bind -M default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection fish_clipboard_copy
 
 bind -M visual l forward-word
 bind -M visual y backward-char

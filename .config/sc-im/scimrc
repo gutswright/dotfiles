@@ -57,6 +57,8 @@ enoremap "h" "j"
 enoremap "a" "k"
 enoremap "e" "l"
 
+# =@sum(range)
+
 # :lua dofile("/usr/local/share/sc-im/lua/my_macros.lua"); list_functions()
 
 # LUAFILE "~/.config/sc-im/lua/my_macros.lua"
