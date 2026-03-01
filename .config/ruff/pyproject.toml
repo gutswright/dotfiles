@@ -1,0 +1,28 @@
+# [lint]
+# select = ["E", "F"]
+
+[tool.ruff]
+line-length = 120
+preview = true
+indent-width = 4
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "double"
+docstring-code-format = true
+docstring-code-line-length = 80
+
+[tool.ruff.lint]
+ignore = ["F401"]
+
+
+# [tool.ruff.lint]
+
+# fix = true
+# show-fixes = true
+# unsafe-fixes = true
+
+#
+[tool.ruff.analyze]
+detect-string-imports = true
+

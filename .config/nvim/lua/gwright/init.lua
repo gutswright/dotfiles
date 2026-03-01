@@ -6,7 +6,7 @@ vim.opt.clipboard = 'unnamedplus'
 -- vim.keymap.set('i', 'JK', '<esc>')
 
 vim.wo.number = true
-vim.opt.rnu = true
+-- vim.opt.rnu = true
 
 -- vim.o.mouse = 'a'
 

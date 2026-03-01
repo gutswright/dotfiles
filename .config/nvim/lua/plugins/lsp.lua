@@ -13,7 +13,6 @@ return {
         ensure_installed = {
           'lua_ls',
           'pyright',
-          -- 'basedpyright',
           'svelte',
           'terraformls',
           'cssls',
