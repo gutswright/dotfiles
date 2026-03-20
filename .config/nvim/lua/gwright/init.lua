@@ -8,7 +8,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.wo.number = true
 -- vim.opt.rnu = true
 
--- vim.o.mouse = 'a'
+vim.opt.swapfile = false
 
 vim.opt.smartcase = true -- makes searching easier
 vim.opt.ignorecase = true
@@ -70,6 +70,10 @@ vim.keymap.set('n', '<C-w>y', '<C-w>h', { noremap = true })
 vim.keymap.set('n', '<C-w>h', '<C-w>j', { noremap = true })
 vim.keymap.set('n', '<C-w>a', '<C-w>k', { noremap = true })
 vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
+
+vim.cmd([[
+  amenu PopUp.Nvim\ Tree :NvimTreeToggle<CR>
+]])
 
 -- Set fillchars to use thicker characters
 vim.opt.fillchars = {

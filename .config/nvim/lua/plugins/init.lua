@@ -26,6 +26,7 @@ require('lazy').setup({
     require('plugins.lsp'),
     require('plugins.lint_and_format'),
     require('plugins.preview_typst'),
+    require('plugins.file_menu'),
     -- require("plugins.none-ls"),
     require('plugins.snacks'),
     require('plugins.markdown'),
