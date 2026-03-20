@@ -27,6 +27,7 @@ return {
           'typescript',
           'typst',
           'zig',
+          'cpp',
         },
         highlight = { enable = true },
         indent = { enable = true },

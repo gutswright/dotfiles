@@ -15,6 +15,8 @@ return {
           'pyright',
           'svelte',
           'terraformls',
+          'html',
+          'emmet_ls',
           'cssls',
           'tailwindcss',
         },
@@ -27,6 +29,9 @@ return {
       vim.lsp.config('lua_ls', {})
       vim.lsp.config('svelte', {})
       vim.lsp.config('terraformls', {})
+      vim.lsp.config('emmet_ls', {
+        filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
+      })
       vim.lsp.config('cssls', {})
       vim.lsp.config('tailwindcss', {})
 
