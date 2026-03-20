@@ -8,6 +8,9 @@ vim.opt.clipboard = 'unnamedplus'
 vim.wo.number = true
 -- vim.opt.rnu = true
 
+vim.opt.mouse = 'a'
+vim.opt.mousemodel = 'popup_setpos'
+
 vim.opt.swapfile = false
 
 vim.opt.smartcase = true -- makes searching easier
@@ -71,18 +74,48 @@ vim.keymap.set('n', '<C-w>h', '<C-w>j', { noremap = true })
 vim.keymap.set('n', '<C-w>a', '<C-w>k', { noremap = true })
 vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
 
-vim.cmd([[
-  amenu PopUp.Nvim\ Tree :NvimTreeToggle<CR>
-]])
+vim.keymap.set('n', '<A-a>', ':m .-2<CR>==', { desc = 'Move line up' })
+
+vim.keymap.set('n', '<A-h>', ':m .+1<CR>==', { desc = 'Move line down' })
+
+-- vim.cmd([[
+--   amenu 10.10 PopUp.Nvim\ Tree :NvimTreeToggle<CR>
+--   amenu 10.15 PopUp.-Sep- :
+-- ]])
+
+-- Use pcall to "try" deleting the menu without crashing if it fails
+-- pcall(vim.cmd, 'aunmenu Popup')
+--
+-- -- Create your new menu item
+--
+-- vim.cmd([[
+--   aunmenu PopUp
+--   anoremenu PopUp.Inspect <cmd>Inspect<CR>
+-- ]])
+
+-- vim.g.did_install_default_menus = 1
+
+vim.api.nvim_clear_autocmds({ event = 'MenuPopup', group = 'nvim.popupmenu' })
+
+vim.api.nvim_create_autocmd('MenuPopup', {
+  callback = function()
+    -- Clear whatever's there first
+    pcall(vim.cmd, 'aunmenu PopUp')
+
+    vim.cmd('amenu PopUp.Nvim\\ Tree :NvimTreeToggle<CR>')
+    -- PopUp.vim.cmd('amenu PopUp.-sep-       <Nop>') -- separator
+    vim.cmd("amenu PopUp.Other\\ Action :lua print('world')<CR>")
+  end,
+})
 
 -- Set fillchars to use thicker characters
 vim.opt.fillchars = {
   horiz = '▀',
   horizup = '▀',
   horizdown = '▄',
-  vert = '▌',
-  -- '█'
-  vertleft = '▌',
-  vertright = '▐',
+  vert = '█',
+  -- '█'▌
+  vertleft = '█',
+  vertright = '█',
   verthoriz = '█',
 }
