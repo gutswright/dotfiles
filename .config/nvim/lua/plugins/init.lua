@@ -16,24 +16,26 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   spec = {
-    require('plugins.dap'),
-    require('plugins.background'),
+
+    require('plugins.lsp_lint_and_completions.treesitter'),
+    require('plugins.lsp_lint_and_completions.lint_and_format'),
+    require('plugins.lsp_lint_and_completions.blink-cmp'),
+    require('plugins.lsp_lint_and_completions.lsp'),
+
+    require('plugins.theme.background'),
+    require('plugins.theme.color_theme'),
+    require('plugins.theme.snacks'),
+
+    require('plugins.debug.dap'),
+
     require('plugins.mini'),
     require('plugins.tabs'),
-    require('plugins.theme'),
     require('plugins.sql'),
-    require('plugins.treesitter'),
-    require('plugins.lsp'),
-    require('plugins.lint_and_format'),
-    require('plugins.preview_typst'),
+    require('plugins.previews'),
     require('plugins.file_menu'),
     -- require("plugins.none-ls"),
-    require('plugins.snacks'),
-    require('plugins.markdown'),
     -- require("plugins.surround"),
     -- require("plugins.completions"),
-    require('plugins.blink-cmp'),
-    require('plugins.preview_goto'),
   },
   install = { colorscheme = { 'habamax' } },
   checker = { enabled = false },

@@ -75,8 +75,9 @@ vim.keymap.set('n', '<C-w>a', '<C-w>k', { noremap = true })
 vim.keymap.set('n', '<C-w>e', '<C-w>l', { noremap = true })
 
 vim.keymap.set('n', '<A-a>', ':m .-2<CR>==', { desc = 'Move line up' })
-
 vim.keymap.set('n', '<A-h>', ':m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('i', '<A-a>', '<Esc>:m .-2<CR>==gi', { desc = 'Move line up' })
+vim.keymap.set('i', '<A-h>', '<Esc>:m .+1<CR>==gi', { desc = 'Move line down' })
 
 -- vim.cmd([[
 --   amenu 10.10 PopUp.Nvim\ Tree :NvimTreeToggle<CR>
@@ -104,7 +105,8 @@ vim.api.nvim_create_autocmd('MenuPopup', {
 
     vim.cmd('amenu PopUp.Nvim\\ Tree :NvimTreeToggle<CR>')
     -- PopUp.vim.cmd('amenu PopUp.-sep-       <Nop>') -- separator
-    vim.cmd("amenu PopUp.Other\\ Action :lua print('world')<CR>")
+
+    vim.cmd('amenu PopUp.Show\\ Definition :lua vim.lsp.buf.hover()<CR>')
   end,
 })
 
