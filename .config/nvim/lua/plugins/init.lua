@@ -27,6 +27,7 @@ require('lazy').setup({
     require('plugins.theme.snacks'),
 
     require('plugins.debug.dap'),
+    require('plugins.debug.debug_print'),
 
     require('plugins.mini'),
     require('plugins.tabs'),
