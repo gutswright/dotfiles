@@ -1,4 +1,5 @@
 theme=Slate
+font-size = 16 
 # TO TROLL -> font-family="Symbols Nerd Font"
 font-family = "Source Code Pro Semibold"
 # font-family= "CaskaydiaCove Nerd Font"
@@ -6,7 +7,23 @@ font-family = "Source Code Pro Semibold"
 # font-family-italic="Noto Sans Sinhala UI Black"
 
 # font-family-italic="Noto Sans Myanmar Black"
-font-family-italic="Noto Sans Lao Black"
+
+font-family-italic="Noto Sans Lao"
+# font-style-italic="Black"
+
+# font-family-bold-italic="CaskaydiaCove Nerd Font"
+font-family-bold-italic="Victor Mono"
+font-style-bold-italic="Bold Italic"
+
+# font-style-bold-italic="Bold Italic"
+
+# font-variation-bold-italic="wght=900"
+
+# font-family-bold="Cascadia Code"
+# font-style-bold="Italic"
+# font-variation-bold="wght=900"
+
+# font-family-bold="Victor Mono Italic"
 # font-variation-italic="wght=900"
 # font-family-italic="Noto Sans Tamil UI Black"
 # font-family-bold = "FiraCode Nerd Font Propo Bold"
@@ -19,7 +36,6 @@ font-family-italic="Noto Sans Lao Black"
 # font-family = "Noto Sans Mono Regular" 
 # font-family = "SourceCodeVF Bold"
 # font-family = "CaskaydiaCove Nerd Font Mono"
-font-size = 16 
 working-directory = home 
 macos-option-as-alt = true 
 # focus-follows-mouse = true

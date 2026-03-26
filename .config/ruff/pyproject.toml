@@ -13,7 +13,7 @@ docstring-code-format = true
 docstring-code-line-length = 80
 
 [tool.ruff.lint]
-ignore = ["F401"]
+ignore = ["F401", "RET504"]
 
 
 # [tool.ruff.lint]
