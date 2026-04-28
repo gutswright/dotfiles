@@ -12,8 +12,13 @@ font-family-italic="Noto Sans Lao"
 # font-style-italic="Black"
 
 # font-family-bold-italic="CaskaydiaCove Nerd Font"
+
+# font-family-bold-italic="Victor Mono"
+# font-style-bold-italic="Bold Italic"
+#
 font-family-bold-italic="Victor Mono"
 font-style-bold-italic="Bold Italic"
+
 
 # font-style-bold-italic="Bold Italic"
 

@@ -57,6 +57,10 @@ set -gx EDITOR nvim
 set -U fish_user_paths /opt/google-cloud-cli/bin $fish_user_paths
 set -U fish_user_paths /usr/bin/vendor_perl $fish_user_paths
 
+if set -q GHOSTTY_RESOURCES_DIR
+    source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+end
+
 bind \co ranger-cd
 
 function fish_greeting

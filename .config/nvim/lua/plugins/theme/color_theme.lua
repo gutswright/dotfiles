@@ -9,19 +9,28 @@ return {
         highlights = {
           ['@comment'] = { fg = '#A0A0A0', fmt = 'italic' },
 
-          ['@keyword.export'] = { fg = '#e06c75' },
-
-          ['@keyword.coroutine'] = { fg = '#56b6c2' },
-
-          ['@keyword.function'] = { fg = '#efbd5d', fmt = 'italic' },
-
-          ['@keyword.return'] = { fg = '#c678dd', fmt = 'italic' },
-          ['@variable.parameter'] = { fmt = 'bold,italic' },
-          ['@variable.member'] = { fg = '#e88dca', fmt = 'bold,italic' },
+          -- ['@keyword.export'] = { fg = '#e06c75' },
+          -- ['@keyword.coroutine'] = { fg = '#56b6c2' },
+          -- ['@keyword.function'] = { fg = '#efbd5d', fmt = 'italic' },
+          -- ['@keyword.return'] = { fg = '#c678dd', fmt = 'italic' },
+          -- ['@variable.parameter'] = { fmt = 'bold,italic' },
+          -- ['@variable.member'] = { fg = '#e88dca', fmt = 'bold,italic' },
           -- ['@variable'] = { fg = '#bab1af' },
         },
       })
       require('onedark').load()
+
+      -- vim.api.nvim_create_autocmd('FileType', {
+      --   pattern = { 'typescript' },
+      --   callback = function()
+      --     vim.api.nvim_set_hl(0, '@keyword.export', { fg = '#e06c75' })
+      --     vim.api.nvim_set_hl(0, '@keyword.coroutine', { fg = '#56b6c2' })
+      --     vim.api.nvim_set_hl(0, '@keyword.function', { fg = '#efbd5d', italic = true })
+      --     vim.api.nvim_set_hl(0, '@keyword.return', { fg = '#c678dd', italic = true })
+      --     vim.api.nvim_set_hl(0, '@variable.parameter', { bold = true, italic = true })
+      --     vim.api.nvim_set_hl(0, '@variable.member', { fg = '#e88dca', bold = true, italic = true })
+      --   end,
+      -- })
 
       vim.g.comments_on = true
       vim.keymap.set('n', '<leader>cc', function()

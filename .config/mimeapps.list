@@ -1,0 +1,19 @@
+[Default Applications]
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop
+; x-scheme-handler/mailto=userapp-Thunderbird-ANMZZ2.desktop
+; message/rfc822=userapp-Thunderbird-ANMZZ2.desktop
+; x-scheme-handler/mid=userapp-Thunderbird-ANMZZ2.desktop
+text/html=firefox-developer-edition.desktop
+x-scheme-handler/http=firefox-developer-edition.desktop
+x-scheme-handler/https=firefox-developer-edition.desktop
+x-scheme-handler/about=firefox-developer-edition.desktop
+x-scheme-handler/unknown=firefox-developer-edition.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+
+[Added Associations]
+; x-scheme-handler/mailto=userapp-Thunderbird-ANMZZ2.desktop;
+; x-scheme-handler/mid=userapp-Thunderbird-ANMZZ2.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice-desktopeditors.desktop;
+
+; ls /usr/share/applications
