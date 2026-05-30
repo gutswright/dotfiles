@@ -28,14 +28,23 @@ return {
       -- vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", {noremap=true})
     end,
   },
-
   {
-    -- markdown preview
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
+    build = 'cd app && yarn install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
     end,
+    ft = { 'markdown' },
   },
+
+  -- {
+  --   -- markdown preview
+  --   'iamcco/markdown-preview.nvim',
+  --   cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+  --   ft = { 'markdown' },
+  --   build = function()
+  --     vim.fn['mkdp#util#install']()
+  --   end,
+  -- },
 }

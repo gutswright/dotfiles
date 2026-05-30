@@ -26,6 +26,9 @@ return {
       vim.keymap.set('n', '<leader>e', function()
         require('mini.files').open()
       end, { desc = 'Open mini file finder' })
+      vim.keymap.set('n', '<BS>e', function()
+        require('mini.files').open()
+      end, { desc = 'Open mini file finder' })
 
       require('mini.colors').setup({})
       require('mini.comment').setup({})
