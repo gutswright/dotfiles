@@ -1,31 +1,11 @@
 set -g fish_key_bindings fish_vi_key_bindings
 
-bind -M default y backward-char
-bind -M default l forward-word
-bind -M default e forward-char
-bind -M default j forward-char repaint-mode -m insert
-bind -M default J end-of-line repaint-mode -m insert
-# bind -M default a up-or-search
-
-bind -M default "''" kill-whole-line yank fish_clipboard_copy
-bind -M default "'",w kill-word yank fish_clipboard_copy
-bind -M default "'",b forward-single-char backward-kill-word yank fish_clipboard_copy
-bind -M default "'",\$ kill-line yank fish_clipboard_copy
-bind -M default "'",i,w forward-single-char forward-single-char backward-word kill-word yank fish_clipboard_copy
-bind -M default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank fish_clipboard_copy
-bind -M default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection fish_clipboard_copy
-bind -M default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection fish_clipboard_copy
-
-bind -M visual l forward-word
-bind -M visual y backward-char
-bind -M visual e forward-char
-bind -M visual "'" -m default kill-selection yank fish_clipboard_copy end-selection repaint-mode
-
 fzf --fish | source
 
 zoxide init fish | source
 
 fish_add_path /home/gutswright/.cargo/bin/
+fish_add_path /usr/local/bin
 
 set -gx ATUIN_NOBIND true
 atuin init fish | source
@@ -104,3 +84,24 @@ end
 #       ....="cd ../../.." \
 #       .....="cd ../../../.." \
 #       ......="cd ../../../../.."
+
+# bind -M default y backward-char
+# bind -M default l forward-word
+# bind -M default e forward-char
+# bind -M default j forward-char repaint-mode -m insert
+# bind -M default J end-of-line repaint-mode -m insert
+# # bind -M default a up-or-search
+#
+# bind -M default "''" kill-whole-line yank fish_clipboard_copy
+# bind -M default "'",w kill-word yank fish_clipboard_copy
+# bind -M default "'",b forward-single-char backward-kill-word yank fish_clipboard_copy
+# bind -M default "'",\$ kill-line yank fish_clipboard_copy
+# bind -M default "'",i,w forward-single-char forward-single-char backward-word kill-word yank fish_clipboard_copy
+# bind -M default "'",a,w forward-single-char forward-single-char backward-bigword kill-bigword yank fish_clipboard_copy
+# bind -M default "'",i,b jump-till-matching-bracket and jump-till-matching-bracket and begin-selection jump-till-matching-bracket kill-selection yank end-selection fish_clipboard_copy
+# bind -M default "'",a,b jump-to-matching-bracket and jump-to-matching-bracket and begin-selection jump-to-matching-bracket kill-selection yank end-selection fish_clipboard_copy
+#
+# bind -M visual l forward-word
+# bind -M visual y backward-char
+# bind -M visual e forward-char
+# bind -M visual "'" -m default kill-selection yank fish_clipboard_copy end-selection repaint-mode
