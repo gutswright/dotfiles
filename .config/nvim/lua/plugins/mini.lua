@@ -63,25 +63,25 @@ return {
         custom_textobjects = nil,
 
         -- Module mappings
-        mappings = {
-          -- Around textobject
-          around = 'j',
-          -- Inside textobject
-          inside = 'i',
-
-          -- Next textobject
-          around_next = 'jn',
-          inside_next = 'in',
-
-          -- Last textobject
-          around_last = 'jl',
-          inside_last = 'il',
-
-          -- Move cursor to corresponding edge of `a` textobject
-          goto_left = 'g[',
-          goto_right = 'g]',
-        },
-
+        -- mappings = {
+        --   -- Around textobject
+        --   around = 'j',
+        --   -- Inside textobject
+        --   inside = 'i',
+        --
+        --   -- Next textobject
+        --   around_next = 'jn',
+        --   inside_next = 'in',
+        --
+        --   -- Last textobject
+        --   around_last = 'jl',
+        --   inside_last = 'il',
+        --
+        --   -- Move cursor to corresponding edge of `a` textobject
+        --   goto_left = 'g[',
+        --   goto_right = 'g]',
+        -- },
+        --
         -- Number of lines within which textobject is searched
         n_lines = 50,
 
