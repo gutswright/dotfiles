@@ -30,7 +30,8 @@ alias steam='env SDL_VIDEODRIVER=wayland GDK_BACKEND=wayland QT_QPA_PLATFORM=way
 alias ls="eza --icons=auto --group-directories-first"
 alias vimlab="matlab -nodesktop -nosplash"
 # alias fontforge="GDK_SCALE=2 fontforge -nosplash"
-alias libreoffice="GDK_SCALE=2 GDK_DPI_SCALE=1.5 libreoffice --calc"
+# alias libreoffice="GDK_SCALE=2 GDK_DPI_SCALE=1.5 libreoffice --calc"
+alias k="kubectl"
 
 set -gx EDITOR nvim
 
