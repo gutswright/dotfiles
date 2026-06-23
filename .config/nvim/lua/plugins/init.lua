@@ -40,6 +40,7 @@ require('lazy').setup({
   },
   install = { colorscheme = { 'habamax' } },
   checker = { enabled = false },
+  rocks = { enabled = false },
 })
 
 -- everything is global by default

@@ -6,6 +6,8 @@ zoxide init fish | source
 
 fish_add_path /home/gutswright/.cargo/bin/
 fish_add_path /usr/local/bin
+fish_add_path ~/.local/bin
+fish_add_path /run/current-system/sw/bin
 
 set -gx ATUIN_NOBIND true
 atuin init fish | source

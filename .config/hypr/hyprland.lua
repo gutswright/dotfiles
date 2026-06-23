@@ -1,3 +1,5 @@
+-- Source for generated hyprland.conf. Edit this file, then run ./scripts/render-lua-config.sh.
+return [==[
 # You can split this configuration into multiple files
 # Create your files separately and then link them to this file like this:
 # source = ~/.config/hypr/myColors.conf
@@ -364,3 +366,4 @@ bind = , XF86MonBrightnessUP, exec, brightnessctl set +10%,
 # If you do not use cursor timeout or cursor:hide_on_key_press, you can delete its respective cals
 # bind=$mainMod,i,exec,hyprctl keyword cursor:inactive_timeout 0; hyprctl keyword cursor:hide_on_key_press false; hyprctl dispatch submap cursor
 
+]==]

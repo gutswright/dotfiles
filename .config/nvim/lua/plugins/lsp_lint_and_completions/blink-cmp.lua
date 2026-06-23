@@ -5,7 +5,7 @@ return {
     dependencies = {
       'rafamadriz/friendly-snippets',
       'saghen/blink.compat',
-      { 'Exafunction/codeium.nvim', opts = {} },
+      -- { 'Exafunction/codeium.nvim', opts = {} },
     },
 
     version = '1.*',
@@ -22,15 +22,16 @@ return {
       completion = { documentation = { auto_show = false } },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
-        providers = {
-          codeium = {
-            name = 'codeium',
-            module = 'blink.compat.source',
-            score_offset = 100, -- Prioritize AI suggestions
-            async = true,
-          },
-        },
+        -- default = { 'lsp', 'path', 'snippets', 'buffer', 'codeium' },
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+        -- providers = {
+        -- codeium = {
+        --   name = 'codeium',
+        --   module = 'blink.compat.source',
+        --   score_offset = 100, -- Prioritize AI suggestions
+        --   async = true,
+        -- },
+        -- },
       },
 
       fuzzy = { implementation = 'prefer_rust_with_warning' },
