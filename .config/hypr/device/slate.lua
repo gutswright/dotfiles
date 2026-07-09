@@ -1,38 +1,33 @@
--- Source for generated device/slate.conf. Edit this file, then run ./scripts/render-lua-config.sh.
-return [==[
+------------------
+---- MONITORS ----
+------------------
 
-monitor=eDP-1, 3840x2160@60, 3840x0,2.0
-# monitor=eDP-1, 3840x2160@60, 0x3840, 2.0, transform, 1
-# monitor=,preferred,auto,1
+hl.monitor({
+  output = "eDP-1",
+  mode = "3840x2160@60",
+  position = "3840x0",
+  scale = 2.0,
+})
 
-# $w1 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/leaves.jpg"
-$w2 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/black_sand.jpg"
-$w3 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/capital_reef_lightning.jpg"
-$w4 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/sky_bridge.jpg"
-$w5 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/coral_sunset.jpg"
-$w6 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/dramatic_mountains.jpg"
-$w7 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg"
-$w8 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/island_sunset.jpg"
-$w9 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/light_bulb.jpg"
-$w10 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/starry_night_sunset.jpg"
-$w11 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/stone_hedge.jpg"
-$w12 = hyprctl hyprpaper wallpaper "eDP-1,~/.config/hypr/wallpapers/night_mountains.jpg"
+---------------------
+---- KEYBINDINGS ----
+---------------------
 
+local mainMod = "SUPER"
 
+local wallpapers = {
+  [2] = "black_sand.jpg",
+  [3] = "capital_reef_lightning.jpg",
+  [4] = "sky_bridge.jpg",
+  [5] = "coral_sunset.jpg",
+  [6] = "dramatic_mountains.jpg",
+  [7] = "dream_mountain_lake_sunset.jpg",
+  [8] = "island_sunset.jpg",
+  [9] = "light_bulb.jpg",
+  [0] = "starry_night_sunset.jpg",
+}
 
-$mainMod = SUPER # Sets "Windows" key as main modifier
-
-# bind = $mainMod, 1, exec, $w1
-bind = $mainMod, 2, exec, $w2
-bind = $mainMod, 3, exec, $w3
-bind = $mainMod, 4, exec, $w4
-bind = $mainMod, 5, exec, $w5
-bind = $mainMod, 6, exec, $w6
-bind = $mainMod, 7, exec, $w7
-bind = $mainMod, 8, exec, $w8
-bind = $mainMod, 9, exec, $w9
-bind = $mainMod, 0, exec, $w10
-
-
-
-]==]
+for key, file in pairs(wallpapers) do
+  local path = "~/.config/hypr/wallpapers/" .. file
+  hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd('hyprctl hyprpaper wallpaper "eDP-1,' .. path .. '"'))
+end

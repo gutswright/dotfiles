@@ -1,152 +1,72 @@
--- Source for generated device/zigboi.conf. Edit this file, then run ./scripts/render-lua-config.sh.
-return [==[
-################
-### MONITORS ###
-################
+------------------
+---- MONITORS ----
+------------------
 
-$env.MOZ_ENABLE_WAYLAND=1
+hl.env("MOZ_ENABLE_WAYLAND", "1")
 
-# monitor=HDMI-A-1, disable
-monitor=DP-2,3840x2160@60,3840x0,1
-monitor=DP-4,3840x2160@60,0x0,1
-# monitor=HDMI-A-1,3840x2160@60,0x0,1
-# monitor=DP-1, disable
-# monitor=,preferred,auto,1
-# monitor=,preferred,auto,1
+hl.monitor({
+    output = "DP-2",
+    mode = "3840x2160@60",
+    position = "3840x0",
+    scale = 1,
+})
 
+hl.monitor({
+    output = "DP-4",
+    mode = "3840x2160@60",
+    position = "0x0",
+    scale = 1,
+})
 
-# workspace=1, monitor:HDMI-A-1
-workspace=3, monitor:DP-2
-# workspace=3, monitor:DP-1
-# workspace=3, monitor:HDMI-A-1
-# workspace=4, monitor:HDMI-A-1
-# workspace=5, monitor:HDMI-A-1
-# workspace=6, monitor:HDMI-A-1
-# workspace=7, monitor:HDMI-A-1
-# workspace=8, monitor:HDMI-A-1
-# workspace=9, monitor:HDMI-A-1
-# workspace=1, monitor:DP-1
+hl.workspace_rule({
+    workspace = "3",
+    monitor = "DP-2",
+})
 
+-------------------
+---- AUTOSTART ----
+-------------------
 
-######HELLDIVERS RIGHT SCREEN
-# monitor=HDMI-A-1,3840x2160@60,3840x0, 1, mirror, DP-1 
-# monitor=DP-1, disable
+hl.on("hyprland.start", function()
+    hl.exec_cmd("ghostty")
+end)
 
+-------------------------------
+---- ENVIRONMENT VARIABLES ----
+-------------------------------
 
-#########HELLDIVERS left screen############
-#monitor=DP-4,3840x2160@60,auto,1
-#monitor=HDMI-A-1,3840x2160@60,preferred,auto
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 
-#monitor=HDMI-A-1,3840x2160@60, ,1
+---------------------
+---- KEYBINDINGS ----
+---------------------
 
+local mainMod = "MOD4"
 
-#################
-### AUTOSTART ###
-#################
+local wallpapers = {
+    [2] = "black_sand.jpg",
+    [3] = "capital_reef_lightning.jpg",
+    [4] = "sky_bridge.jpg",
+    [5] = "coral_sunset.jpg",
+    [6] = "dramatic_mountains.jpg",
+    [7] = "dream_mountain_lake_sunset.jpg",
+    [8] = "island_sunset.jpg",
+    [9] = "light_bulb.jpg",
+    [0] = "starry_night_sunset.jpg",
+}
 
+for key, file in pairs(wallpapers) do
+    local path = "~/.config/hypr/wallpapers/" .. file
+    hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd('hyprctl hyprpaper wallpaper "DP-1,' .. path .. '"'))
+    hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd('hyprctl hyprpaper wallpaper "HDMI-A-1,' .. path .. '"'))
+end
 
-exec-once = $terminal
-# exec-once = waybar
-# exec-once = bash /home/gutswright/merge_sound.sh
-# exec-once = nm-applet &
-# exec-once = waybar & hyprpaper & firefox
-
-
-# $w1_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/leaves.jpg"
-# $w1_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/leaves.jpg"
-$w2_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/black_sand.jpg"
-$w2_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/black_sand.jpg"
-$w3_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/capital_reef_lightning.jpg"
-$w3_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/capital_reef_lightning.jpg"
-$w4_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/sky_bridge.jpg"
-$w4_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/sky_bridge.jpg"
-$w5_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/coral_sunset.jpg"
-$w5_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/coral_sunset.jpg"
-$w6_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/dramatic_mountains.jpg"
-$w6_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/dramatic_mountains.jpg"
-$w7_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg"
-$w7_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg"
-$w8_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/island_sunset.jpg"
-$w8_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/island_sunset.jpg"
-$w9_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/light_bulb.jpg"
-$w9_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/light_bulb.jpg"
-$w10_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/starry_night_sunset.jpg"
-$w10_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/starry_night_sunset.jpg"
-$w11_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/stone_hedge.jpg"
-$w11_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/stone_hedge.jpg"
-$w12_dp = hyprctl hyprpaper wallpaper "DP-1,~/.config/hypr/wallpapers/night_mountains.jpg"
-$w12_hdmi = hyprctl hyprpaper wallpaper "HDMI-A-1,~/.config/hypr/wallpapers/night_mountains.jpg"
-
-
-#############################
-### ENVIRONMENT VARIABLES ###
-#############################
-
-# See https://wiki.hyprland.org/Configuring/Environment-variables/
-
-$env.GDK_BACKEND = wayland,x11,*
-$env.SDL_VIDEODRIVER = wayland
-$env.CLUTTER_BACKEND = wayland
-$env.XDG_CURRENT_DESKTOP = Hyprland
-$env.XDG_SESSION_TYPE = wayland
-$env.XDG_SESSION_DESKTOP = Hyprland
-$env.QT_AUTO_SCREEN_SCALE_FACTOR = 1
-$env.QT_QPA_PLATFORM = wayland;xcb
-# Proprietary NVIDIA-only exports. Leave unset while using Mesa/NVK.
-# env = LIBVA_DRIVER_NAME,nvidia
-# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-# env = NVD_BACKEND,direct
-# env = GBM_BACKEND,nvidia-drm
-
-
-# env = LIBVA_DRIVER_NAME,nvidia
-# env = XDG_SESSION_TYPE,wayland
-# env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-# env = NVD_BACKEND,direct
-#
-# env = XDG_CURRENT_DESKTOP,Hyprland
-# env = XDG_SESSION_TYPE,wayland
-#
-# # Environment variables for Wayland and XWayland
-# env = SDL_VIDEODRIVER,wayland
-# env = GDK_BACKEND,wayland
-# env = QT_QPA_PLATFORM,wayland
-# env = DISPLAY,:0
-# env = GDK_SCALE,1.6
-#
-# env = GBM_BACKEND,nvidia-drm
-
-####################
-### KEYBINDINGS ###
-####################
-
-$mainMod = MOD4 # Sets "Windows" key as main modifier
-# mainMod = Super_L # Sets "Windows" key as main modifier
-
-bind = $mainMod, S, exec, grim -g "$(slurp)" - | satty --no-window-decoration --filename - --output-filename ~/Downloads/satty-$(date '+%Y%m%d-%H:%M:%S').png --copy-command wl-copy
-
-
-# bind = $mainMod, 1, exec, $w1_dp
-# bind = $mainMod, 1, exec, $w1_hdmi
-bind = $mainMod, 2, exec, $w2_dp
-bind = $mainMod, 2, exec, $w2_hdmi
-bind = $mainMod, 3, exec, $w3_dp
-bind = $mainMod, 3, exec, $w3_hdmi
-bind = $mainMod, 4, exec, $w4_dp
-bind = $mainMod, 4, exec, $w4_hdmi
-bind = $mainMod, 5, exec, $w5_dp
-bind = $mainMod, 5, exec, $w5_hdmi
-bind = $mainMod, 6, exec, $w6_dp
-bind = $mainMod, 6, exec, $w6_hdmi
-bind = $mainMod, 7, exec, $w7_dp
-bind = $mainMod, 7, exec, $w7_hdmi
-bind = $mainMod, 8, exec, $w8_dp
-bind = $mainMod, 8, exec, $w8_hdmi
-bind = $mainMod, 9, exec, $w9_dp
-bind = $mainMod, 9, exec, $w9_hdmi
-bind = $mainMod, 0, exec, $w10_dp
-bind = $mainMod, 0, exec, $w10_hdmi
-
-
-bind = , XF86AudioRaiseVolume, exec, pavucontrol 
-]==]
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | satty --no-window-decoration --filename - --output-filename ~/Downloads/satty-$(date '+%Y%m%d-%H:%M:%S').png --copy-command wl-copy]]))
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pavucontrol"))

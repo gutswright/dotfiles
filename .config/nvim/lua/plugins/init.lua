@@ -30,7 +30,7 @@ require('lazy').setup({
     require('plugins.debug.debug_print'),
 
     require('plugins.mini'),
-    require('plugins.obsidian'),
+    -- require('plugins.obsidian'),
     require('plugins.tabs'),
     require('plugins.sql'),
     require('plugins.previews'),

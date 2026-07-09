@@ -1,5 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR __fish_initialized:3800
+SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:And\x20remember\x2c\x20you\x20are\x20great\x20coder\x20because\x20of\x20your\x20perseverance\x21\x1eYou\x20are\x20great
 SETUVAR fish_user_paths:/usr/bin/vendor_perl\x1e/opt/google\x2dcloud\x2dcli/bin\x1e/run/wrappers/bin\x1e/run/current\x2dsystem/sw/bin\x1e/home/guts/\x2elocal/bin\x1e/usr/local/bin\x1e/usr/bin/vendor_perl/bin\x1e/home/gutswright/\x2ecargo/bin
