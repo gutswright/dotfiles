@@ -178,5 +178,30 @@ hl.bind("Shift_L + Alt_L + F", hl.dsp.exec_cmd("hyprctl dispatch fullscreen"))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
-hl.bind("XF86MonBrightnessUP", hl.dsp.exec_cmd("brightnessctl set +10%"))
+-- SCREENBRIGHTNESS --
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"), { locked = true, repeating = true })
+
+hl.bind(
+  "XF86MonBrightnessDown",
+  hl.dsp.exec_cmd([[sh -c 'brightnessctl s "$(brightnessctl g | awk "{printf \"%.0f\", \$1/1.30}")"' ]]),
+  { locked = true, repeating = true }
+)
+
+hl.bind(
+  "XF86MonBrightnessUP",
+  hl.dsp.exec_cmd([[sh -c 'brightnessctl s "$(brightnessctl g | awk "{printf \"%.0f\", \$1*1.30}")"' ]]),
+  { locked = true, repeating = true }
+)
+
+-- SYSTEMVOLUME --
+hl.bind(
+  "XF86AudioLowerVolume",
+  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"),
+  { locked = true, repeating = true }
+)
+
+hl.bind(
+  "XF86AudioRaiseVolume",
+  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"),
+  { locked = true, repeating = true }
+)
