@@ -134,6 +134,18 @@ hl.device({
 ---- KEYBINDINGS ----
 ---------------------
 
+hl.bind(
+  "Insert",
+  hl.dsp.exec_cmd("fish ~/.config/fish/scripts/whisper-live-translate.fish"),
+  { description = "Toggle live translation" }
+)
+
+hl.bind(
+  mainMod .. " + Insert",
+  hl.dsp.exec_cmd([[sh -c 'touch /tmp/whisper-live-translate.no-wtype; pkill -x wtype || true']]),
+  { description = "Stop live translation typing" }
+)
+
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | swappy -f -]]))
 
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox-developer-edition || firefox-devedition"))

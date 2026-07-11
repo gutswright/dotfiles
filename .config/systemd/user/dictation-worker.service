@@ -1,0 +1,19 @@
+[Unit]
+Description=System-wide microphone dictation worker
+Requires=whisper-dictation.service
+After=whisper-dictation.service
+
+[Service]
+Type=simple
+Environment=DICTATION_AUDIO_SOURCE=alsa_input.platform-avs_hdaudio.9.auto.stereo-fallback
+ExecStart=/usr/bin/python3 %h/.config/dictation/dictation_worker.py --runtime-dir %t/dictation
+KillSignal=SIGINT
+KillMode=mixed
+TimeoutStopSec=180
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%t/dictation
+RestrictAddressFamilies=AF_UNIX AF_INET
