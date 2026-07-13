@@ -31,6 +31,7 @@ function stop_recording --on-signal INT
     if test $stopping = false
         set -g stopping true
         echo 'Stopping recording; finishing captured audio...' >&2
+        command -q notify-send; and notify-send "Voice recording stopped" "Transcribing captured audio"
         test -n "$recorder_pid"; and kill -TERM $recorder_pid 2>/dev/null
     end
 end
@@ -89,6 +90,10 @@ if test -z "$recorder_pid"
     exit 1
 end
 
+if test $stopping = false
+    command -q notify-send; and notify-send "Voice recording started" "Speak now"
+end
+
 test $stopping = true; and kill -TERM $recorder_pid 2>/dev/null
 
 set whisper_status 1
@@ -112,7 +117,6 @@ if test $whisper_status -eq 0
         if not test -e $typing_disabled
             set typed_text (string replace -ar '\s*\n\s*' ' ' -- "$text")
             printf '%s' "$typed_text" | wtype -d 1 -
-            test -e $typing_disabled; or wtype -M shift -k Return -m shift
         end
     end
 else

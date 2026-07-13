@@ -1,17 +1,11 @@
-------------------
----- MONITORS ----
-------------------
+-- Laptop setup.
 
 hl.monitor({
   output = "eDP-1",
   mode = "3840x2160@60",
-  position = "3840x0",
-  scale = 2.0,
+  position = "0x0",
+  scale = 2,
 })
-
-----------------
----- INPUT ----
-----------------
 
 hl.gesture({
   fingers = 3,
@@ -19,25 +13,29 @@ hl.gesture({
   action = "workspace",
 })
 
----------------------
----- KEYBINDINGS ----
----------------------
+require("device.common")
 
-local mainMod = "MOD4"
+hl.bind(
+  "XF86MonBrightnessDown",
+  hl.dsp.exec_cmd([[sh -c 'brightnessctl s "$(brightnessctl g | awk "{printf \"%.0f\", \$1/1.30}")"' ]]),
+  { locked = true, repeating = true }
+)
 
-local wallpapers = {
-  [2] = "black_sand.jpg",
-  [3] = "capital_reef_lightning.jpg",
-  [4] = "sky_bridge.jpg",
-  [5] = "coral_sunset.jpg",
-  [6] = "dramatic_mountains.jpg",
-  [7] = "dream_mountain_lake_sunset.jpg",
-  [8] = "island_sunset.jpg",
-  [9] = "light_bulb.jpg",
-  [0] = "starry_night_sunset.jpg",
-}
+hl.bind(
+  "XF86MonBrightnessUP",
+  hl.dsp.exec_cmd([[sh -c 'brightnessctl s "$(brightnessctl g | awk "{printf \"%.0f\", \$1*1.30}")"' ]]),
+  { locked = true, repeating = true }
+)
 
-for key, file in pairs(wallpapers) do
-  local path = "~/.config/hypr/wallpapers/" .. file
-  hl.bind(mainMod .. " + " .. key, hl.dsp.exec_cmd('hyprctl hyprpaper wallpaper "eDP-1,' .. path .. '"'))
-end
+-- SYSTEMVOLUME --
+hl.bind(
+  "XF86AudioLowerVolume",
+  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"),
+  { locked = true, repeating = true }
+)
+
+hl.bind(
+  "XF86AudioRaiseVolume",
+  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+"),
+  { locked = true, repeating = true }
+)

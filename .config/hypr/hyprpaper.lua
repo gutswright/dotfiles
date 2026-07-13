@@ -1,8 +1,0 @@
--- Source for generated hyprpaper.conf. Edit this file, then run ./scripts/render-lua-config.sh.
-return [==[
-preload = /home/gutswright/dotfiles/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg
-
-wallpaper = eDP-1,/home/gutswright/dotfiles/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg
-wallpaper = HDMI-A-1,/home/gutswright/dotfiles/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg
-wallpaper = DP-1,/home/gutswright/dotfiles/.config/hypr/wallpapers/dream_mountain_lake_sunset.jpg
-]==]
