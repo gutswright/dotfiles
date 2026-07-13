@@ -1,9 +1,8 @@
-config-file =
-
+config-file = ?devices/device.ghostty
+# config-file = ?optional/config
 
 theme=Slate
 # font-size = 16 
-font-size = 19 
 # TO TROLL -> font-family="Symbols Nerd Font"
 font-family = "Source Code Pro Semibold"
 # font-family= "CaskaydiaCove Nerd Font"
@@ -58,7 +57,7 @@ keybind = alt+r>g=reload_config
 
 # keybind = alt+n>t=new_tab
 keybind = alt+t>n=new_tab
-keybind = alt+c>t=close_tab
+keybind = alt+t>c=close_tab
 keybind = alt+t>l=previous_tab
 keybind = alt+t>r=next_tab
 keybind = alt+t>m=move_tab:1
@@ -142,7 +141,6 @@ adjust-cursor-thickness = 200%
 # custom-shader = shaders/animated-gradient-shader.glsl
 
 shell-integration = fish
-
 
 config-file = trial/config
 
