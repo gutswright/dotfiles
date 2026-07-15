@@ -125,7 +125,14 @@ hl.bind(
   hl.dsp.exec_cmd("firefox-developer-edition || firefox-devedition"),
   { description = "Open Firefox Developer Edition" }
 )
-hl.bind("SHIFT + ALT + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
+
+hl.bind(
+  "SHIFT + ALT + F",
+  hl.dsp.window.fullscreen({
+    action = "toggle",
+  })
+)
+
 hl.bind(hyper_mod .. " + G", hl.dsp.exec_cmd("chromium --force-device-scale-factor=1.3"))
 hl.bind(hyper_mod .. " + K", hl.dsp.exec_cmd("hyprctl kill"), { description = "Select a window to kill" })
 hl.bind(main_mod .. " + M", hl.dsp.exec_cmd("dms ipc call bar toggle index 0"), { description = "Toggle bar" })
