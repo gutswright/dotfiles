@@ -31,8 +31,9 @@ set -g stopping false
 function stop_recording --on-signal INT --on-signal TERM
     if test $stopping = false
         set -g stopping true
-        echo 'Stopping recording; finishing captured audio...' >&2
-        command -q notify-send; and notify-send "Voice recording stopped" "Transcribing captured audio"
+        # echo 'Stopping recording; finishing captured audio...' >&2
+        # command -q notify-send; and notify-send "Voice recording stopped" "Transcribing captured audio"
+        brightnessctl -d platform::kbd_backlight set 0
         test -n "$recorder_pid"; and kill -TERM $recorder_pid 2>/dev/null
     end
 end
@@ -80,7 +81,8 @@ if test (count $pipeline_pids) -ne 2
 end
 
 if test $stopping = false
-    command -q notify-send; and notify-send "Voice recording started" "Speak now"
+    # command -q notify-send; and notify-send "Voice recording started" "Speak now"
+    brightnessctl -d platform::kbd_backlight set 1
 end
 
 test $stopping = true; and kill -TERM $recorder_pid 2>/dev/null

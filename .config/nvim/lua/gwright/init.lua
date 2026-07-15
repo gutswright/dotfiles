@@ -30,6 +30,10 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
+vim.keymap.set('n', '<leader>uw', function()
+  vim.wo.wrap = not vim.wo.wrap
+end, { desc = 'Toggle line wrap ' })
+
 -- vim.keymap.set('n', 'y', 'h', { noremap = true })
 -- vim.keymap.set('n', 'h', 'j', { noremap = true })
 -- vim.keymap.set('n', 'a', 'k', { noremap = true })

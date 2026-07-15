@@ -10,4 +10,4 @@ require('gwright')
 require('plugins')
 
 -- Workaround for Neovim 0.12.x treesitter crash with markdown code block injections
--- vim.treesitter.query.set('markdown', 'injections', '')
+vim.treesitter.query.set('markdown', 'injections', '')
