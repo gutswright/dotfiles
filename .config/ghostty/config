@@ -1,7 +1,7 @@
 config-file = ?devices/device.ghostty
 # config-file = ?optional/config
 
-theme=Slate
+theme = noctalia
 # font-size = 16 
 # TO TROLL -> font-family="Symbols Nerd Font"
 font-family = "Source Code Pro Semibold"
@@ -99,17 +99,18 @@ keybind = alt+s>o=write_screen_file:open
 # theme =Abernathy 
 # theme = 3024 Night
 # theme = deep
-theme = TokyoNight
+theme = noctalia
 # theme = ENCOM 
 window-theme = ghostty
 window-titlebar-background = #060313
 gtk-titlebar = true
 gtk-tabs-location = top
 adw-toolbar-style = raised
-cursor-style = underline 
+cursor-style = bar
+cursor-style-blink = true
 cursor-color = #A06383
 cursor-opacity = 1
-adjust-cursor-thickness = 200%
+adjust-cursor-thickness = 100%
 
 # palette = 0=#EFBD5D
 # palette = 1=#93A4C3

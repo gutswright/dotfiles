@@ -41,6 +41,7 @@ alias vimlab="matlab -nodesktop -nosplash"
 alias k="kubectl"
 
 set -gx EDITOR nvim
+set -gx NLTK_DATA "$HOME/.local/share/nltk_data"
 
 set -U fish_user_paths /opt/google-cloud-cli/bin $fish_user_paths
 set -U fish_user_paths /usr/bin/vendor_perl $fish_user_paths

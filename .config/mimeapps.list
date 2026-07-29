@@ -10,6 +10,7 @@ x-scheme-handler/about=firefox-developer-edition.desktop
 x-scheme-handler/unknown=firefox-developer-edition.desktop
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice-desktopeditors.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/codex=codex-desktop.desktop
 
 [Added Associations]
 ; x-scheme-handler/mailto=userapp-Thunderbird-ANMZZ2.desktop;

@@ -11,3 +11,6 @@ local devices = {
 
 assert(devices[hostname], "Unsupported hostname: " .. hostname)
 require("device." .. hostname)
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

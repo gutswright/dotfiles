@@ -20,14 +20,15 @@ hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Adwaita")
+hl.env("NLTK_DATA", (os.getenv("XDG_DATA_HOME") or (os.getenv("HOME") .. "/.local/share")) .. "/nltk_data")
 
 -------------------
 ---- AUTOSTART ----
 -------------------
 
 hl.on("hyprland.start", function()
-  hl.exec_cmd("dms run")
-  hl.exec_cmd("dms ipc call wallpaper next")
+  -- hl.exec_cmd("dms run")
+  -- hl.exec_cmd("dms ipc call wallpaper next")
   hl.exec_cmd("hyprctl setcursor Adwaita 24")
 end)
 
