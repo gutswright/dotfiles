@@ -1,1 +1,0 @@
--- Reserved for DMS-managed window rules.

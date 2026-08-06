@@ -22,8 +22,10 @@ bind -M insert \eOA _atuin_bind_up
 bind -M insert \e\[A _atuin_bind_up
 bind \co prevd
 bind -M insert \co prevd
-bind \ci nextd
-bind -M insert \ci nextd
+bind \ei nextd
+bind -M insert \ei nextd
+bind tab complete
+bind -M insert tab complete
 
 # abbr --add cd z
 alias ls="eza --icons=auto --group-directories-first"
