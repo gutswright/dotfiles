@@ -1,4 +1,6 @@
 config-file = ?devices/device.ghostty
+# Ghostty does not expand shell variables in config-file paths.
+# Point devices/device.ghostty at the hostname-specific file for this machine.
 # config-file = ?optional/config
 
 theme = noctalia
