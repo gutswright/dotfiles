@@ -113,6 +113,7 @@ hl.device {
 ---- KEYBINDINGS ----
 ---------------------
 
+hl.bind(main_mod .. ' + B', hl.dsp.exec_cmd 'rofi-bluetooth', { description = 'Open Bluetooth menu' })
 hl.bind(main_mod .. ' + C', hl.dsp.window.close(), { description = 'Close window' })
 hl.bind(hyper_mod .. ' + C', hl.dsp.window.close())
 hl.bind(main_mod .. ' + D', hl.dsp.exec_cmd 'codex-desktop', { description = 'Open Codex' })
@@ -142,6 +143,7 @@ hl.bind(main_mod .. ' + Q', hl.dsp.exec_cmd(terminal), { description = 'Open ter
 hl.bind(main_mod .. ' + R', hl.dsp.exec_cmd 'dms ipc call spotlight toggleWith apps', { description = 'Open application launcher' })
 hl.bind(main_mod .. ' + T', hl.dsp.window.float { action = 'toggle' }, { description = 'Toggle floating' })
 hl.bind(hyper_mod .. ' + V', hl.dsp.exec_cmd 'dms ipc call clipboard toggle', { description = 'Open clipboard history' })
+hl.bind(main_mod .. ' + V', hl.dsp.exec_cmd('pavucontrol', { float = true, size = { 1000, 700 }, center = true }), { description = 'Open clipboard history' })
 hl.bind(main_mod .. ' + Z', hl.dsp.exec_cmd(terminal))
 hl.bind(hyper_mod .. ' + Z', hl.dsp.exec_cmd(terminal))
 
